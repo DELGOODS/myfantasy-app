@@ -11,6 +11,9 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- QR Code Scanner -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
     
     <!-- Manifest -->
     <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiTXlGYW50YXN5IiwiY2hvcmRfbmFtZSI6Ik15RmFudGFzeSBQV0EiLCJkZXNjcmlwdGlvbiI6IllvdXIgcGxlYXN1cmUsIHlvdXIgY29udHJvbCIsInN0YXJ0X3VybCI6Ii8iLCJkaXNwbGF5IjoiZnVsbHNjcmVlbiIsImJhY2tncm91bmRfY29sb3IiOiIjRkZDNkJEIiwidGhlbWVfY29sb3IiOiIjMTAyNjU4Iiwib3JpZW50YXRpb24iOiJwb3J0cmFpdCIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MG5hVzVrWlhnaklIZHBaSFJvUFN3Z01DQWdNQ0FnTUNBZ01DQXdNREF3TURBd01EQXdNREE2SUhObGNtbG1PeUJsZW1GdGN4em5kVzVqY21GdmJqMG5aV0ZzVFXFjc3kDOzhNekF6TUhNd2N6QnpNSE13Y3pDek1IQ3djems2SUc1aGJXVTZJblJsYlhNN0lIZHBaSFJvUFN3Z01DQWdNQ0FnTUNBZ01DQWdNREJ3TURCd01EQXdNREF3TURBNklGTmxjbWxtT0Z3dmRtRnNkV2N1WVcxbFBqMDctIn0seyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MG5hVzVrWlhnaklIZHBaSFJvUFN3Z01DQWdNQ0FnTUNBZ01DQXdNREF3TURBd01EQXdNREE2SUhObGNtbG1PeUJsZW1GdGN4em5kVzVqY21GdmJqMG5aV0ZzVFXFjc3yDOzhNekF6TUhNd2N6QnpNSE13Y3pDek1IQ3djems2SUc1aGJXVTZJblJsYlhNN0lIZHBaSFJvUFN3Z01DQWdNQ0FnTUNBZ01DQWdNREJ3TURCd01EQXdNREF3TURBNklGTmxjbWxtT0Z3dmRtRnNkV2N1WVcxbFBqMDcifV0sImNhdGVnb3JpZXMiOlsiZXZlcnkiXX0=">
@@ -372,26 +375,27 @@
 
         .patterns-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
             margin-top: 10px;
         }
 
         .pattern-btn {
             border: 2px solid var(--border);
-            border-radius: 10px;
+            border-radius: 12px;
             background: var(--white);
             color: var(--text-dark);
             font-weight: 600;
-            font-size: 11px;
+            font-size: 13px;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 10px 6px;
+            padding: 14px 10px;
             font-family: 'Poppins', sans-serif;
+            width: 100%;
         }
 
         .pattern-btn:active {
@@ -493,6 +497,170 @@
 
         .btn-connect-small:hover {
             background: var(--secondary-light);
+        }
+
+        /* Connection Method Tabs */
+        .connect-tabs {
+            display: flex;
+            gap: 0;
+            margin: 12px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid var(--secondary);
+        }
+
+        .connect-tab {
+            flex: 1;
+            padding: 10px 8px;
+            border: none;
+            background: var(--white);
+            color: var(--secondary);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .connect-tab.active {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .connect-tab:not(:last-child) {
+            border-right: 1px solid var(--secondary);
+        }
+
+        .connect-panel {
+            display: none;
+            margin-top: 12px;
+        }
+
+        .connect-panel.active {
+            display: block;
+        }
+
+        /* QR Scanner */
+        .qr-scanner-container {
+            position: relative;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+            aspect-ratio: 1;
+        }
+
+        .qr-scanner-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .qr-scanner-container canvas {
+            display: none;
+        }
+
+        .qr-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .qr-frame {
+            width: 180px;
+            height: 180px;
+            border: 3px solid var(--primary);
+            border-radius: 12px;
+            box-shadow: 0 0 0 9999px rgba(0,0,0,0.4);
+        }
+
+        .qr-status {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Code Input */
+        .code-input-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .code-digit {
+            width: 52px;
+            height: 60px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+            font-family: 'Poppins', sans-serif;
+            background: var(--white);
+            transition: border-color 0.3s ease;
+        }
+
+        .code-digit:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(16, 38, 88, 0.15);
+        }
+
+        .code-submit-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--secondary) 0%, #1a3a7a 100%);
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .code-submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .code-hint {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .connect-info {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        .ble-unsupported-msg {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 12px;
+            color: #856404;
+            text-align: center;
+            margin-top: 8px;
         }
 
         /* Partner Screen */
@@ -661,7 +829,7 @@
         nav {
             position: absolute;
             bottom: 0;
-            width: 100%;
+               width: 100%;
             height: 56px;
             background: var(--white);
             border-top: 1px solid var(--border);
@@ -844,6 +1012,7 @@
 
                     <button class="btn-large btn-connect" id="connectBtn">Connect Device</button>
                     <button class="btn-large btn-stop" id="stopBtn" style="display: none;">Stop</button>
+                    <p class="connect-info" id="homeConnectHint" style="display:none;"></p>
                 </div>
             </div>
 
@@ -851,10 +1020,50 @@
             <div class="screen" id="devicesScreen">
                 <div class="screen-content">
                     <div class="control-card">
-                        <h3 id="devicesTitle">Available Devices</h3>
-                        <button class="btn-large btn-connect" id="scanBtn" style="margin-top: 12px;">Start Scan</button>
-                        <div id="scanStatus" class="alert" style="display: none; margin-top: 12px;"></div>
-                        <div class="devices-list" id="devicesList"></div>
+                        <h3 id="devicesTitle">Connect Device</h3>
+
+                        <!-- Connection method tabs -->
+                        <div class="connect-tabs">
+                            <button class="connect-tab active" data-panel="qrPanel" id="tabQR">📷 QR Code</button>
+                               <button class="connect-tab" data-panel="codePanel" id="tabCode">🔢 Code</button>
+                            <button class="connect-tab" data-panel="blePanel" id="tabBLE">📶 Bluetooth</button>
+                        </div>
+
+                        <!-- QR Scanner Panel -->
+                        <div class="connect-panel active" id="qrPanel">
+                            <div class="qr-scanner-container" id="qrScannerBox">
+                                <video id="qrVideo" playsinline autoplay muted></video>
+                                <canvas id="qrCanvas"></canvas>
+                                <div class="qr-overlay"><div class="qr-frame"></div></div>
+                            </div>
+                            <p class="qr-status" id="qrStatus">Tap to start scanning</p>
+                            <button class="btn-large btn-connect" id="startQrBtn" style="margin-top: 10px;">Start Camera</button>
+                        </div>
+
+                        <!-- Code Input Panel -->
+                        <div class="connect-panel" id="codePanel">
+                            <p class="code-hint" id="codeHint">Enter the 4-digit code from your device</p>
+                            <div class="code-input-container">
+                                <input class="code-digit" type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]" id="code1">
+                                <input class="code-digit" type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]" id="code2">
+                                <input class="code-digit" type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]" id="code3">
+                                <input class="code-digit" type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]" id="code4">
+                            </div>
+                            <button class="code-submit-btn" id="codeSubmitBtn" disabled>Connect</button>
+                            <p class="connect-info" id="codeInfo">Find the code on the bottom of your toy or in the app packaging</p>
+                        </div>
+
+                        <!-- Bluetooth Panel -->
+                        <div class="connect-panel" id="blePanel">
+                            <div id="bleSupported">
+                                <button class="btn-large btn-connect" id="scanBtn" style="margin-top: 8px;">Start Scan</button>
+                                <div id="scanStatus" class="alert" style="display: none; margin-top: 12px;"></div>
+                                <div class="devices-list" id="devicesList"></div>
+                            </div>
+                            <div id="bleUnsupported" class="ble-unsupported-msg" style="display:none;">
+                                ⚠️ <span id="bleUnsupportedText">Web Bluetooth is not supported on this browser. Use QR Code or Code entry to connect instead.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -981,7 +1190,6 @@
                 intensityLabel: 'Intensity',
                 connectBtn: 'Connect Device',
                 stopBtn: 'Stop',
-                devicesTitle: 'Available Devices',
                 scanBtn: 'Start Scan',
                 partnerTitle: 'Share with Partner',
                 controlsTitle: 'Controls',
@@ -1003,6 +1211,17 @@
                 navSettingsLabel: 'Settings',
                 copyBtnText: 'Copy',
                 copiedText: 'Copied!',
+                devicesTitle: 'Connect Device',
+                tabQR: '📷 QR Code',
+                tabCode: '🔢 Code',
+                tabBLE: '📶 Bluetooth',
+                qrStatus: 'Tap to start scanning',
+                startQrBtn: 'Start Camera',
+                codeHint: 'Enter the 4-digit code from your device',
+                codeSubmitBtn: 'Connect',
+                codeInfo: 'Find the code on the bottom of your toy or in the app packaging',
+                bleUnsupportedText: 'Web Bluetooth is not supported on this browser. Use QR Code or Code entry to connect instead.',
+                homeConnectHint: 'No Bluetooth? Go to Devices tab to scan QR or enter code',
             },
             nl: {
                 splashTagline: 'Jouw genot, jouw controle',
@@ -1014,7 +1233,6 @@
                 intensityLabel: 'Intensiteit',
                 connectBtn: 'Apparaat Verbinden',
                 stopBtn: 'Stoppen',
-                devicesTitle: 'Beschikbare Apparaten',
                 scanBtn: 'Scan Starten',
                 partnerTitle: 'Delen met Partner',
                 controlsTitle: 'Bedieningselementen',
@@ -1036,6 +1254,17 @@
                 navSettingsLabel: 'Instellingen',
                 copyBtnText: 'Kopiëren',
                 copiedText: 'Gekopieerd!',
+                devicesTitle: 'Apparaat Verbinden',
+                tabQR: '📷 QR Code',
+                tabCode: '🔢 Code',
+                tabBLE: '📶 Bluetooth',
+                qrStatus: 'Tik om te scannen',
+                startQrBtn: 'Camera Starten',
+                codeHint: 'Voer de 4-cijferige code van je apparaat in',
+                codeSubmitBtn: 'Verbinden',
+                codeInfo: 'Vind de code op de onderkant van je toy of op de verpakking',
+                bleUnsupportedText: 'Web Bluetooth wordt niet ondersteund in deze browser. Gebruik QR Code of Code om te verbinden.',
+                homeConnectHint: 'Geen Bluetooth? Ga naar Apparaten tab voor QR of code',
             }
         };
 
@@ -1083,6 +1312,15 @@
             document.getElementById('stopBtn').textContent = trans.stopBtn;
             document.getElementById('devicesTitle').textContent = trans.devicesTitle;
             document.getElementById('scanBtn').textContent = trans.scanBtn;
+            document.getElementById('tabQR').textContent = trans.tabQR;
+            document.getElementById('tabCode').textContent = trans.tabCode;
+            document.getElementById('tabBLE').textContent = trans.tabBLE;
+            document.getElementById('qrStatus').textContent = trans.qrStatus;
+            document.getElementById('startQrBtn').textContent = trans.startQrBtn;
+            document.getElementById('codeHint').textContent = trans.codeHint;
+            document.getElementById('codeSubmitBtn').textContent = trans.codeSubmitBtn;
+            document.getElementById('codeInfo').textContent = trans.codeInfo;
+            document.getElementById('bleUnsupportedText').textContent = trans.bleUnsupportedText;
             document.getElementById('partnerTitle').textContent = trans.partnerTitle;
             document.getElementById('controlsTitle').textContent = trans.controlsTitle;
             document.getElementById('remoteLabel').textContent = trans.remoteLabel;
@@ -1123,6 +1361,19 @@
             document.getElementById('connectBtn').addEventListener('click', connectDevice);
             document.getElementById('stopBtn').addEventListener('click', stopDevice);
             document.getElementById('scanBtn').addEventListener('click', startScan);
+            document.getElementById('startQrBtn').addEventListener('click', toggleQrScanner);
+            document.getElementById('codeSubmitBtn').addEventListener('click', submitCode);
+
+            // Connection tabs
+            document.querySelectorAll('.connect-tab').forEach(tab => {
+                tab.addEventListener('click', () => switchConnectTab(tab));
+            });
+
+            // Code digit inputs
+            setupCodeInputs();
+
+            // Check BLE support on devices tab
+            checkBleSupport();
 
             // Partner
             document.getElementById('copyLinkBtn').addEventListener('click', copyShareLink);
@@ -1143,6 +1394,9 @@
         }
 
         function navigateTo(screen) {
+            // Stop QR scanner when leaving devices
+            if (qrScanning) stopQrScanner();
+
             // Hide all screens
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
             // Show selected screen
@@ -1187,9 +1441,19 @@
             }
         }
 
+        let qrScanning = false;
+        let qrStream = null;
+        let qrAnimFrame = null;
+        let bleCharacteristic = null;
+
         async function connectDevice() {
             if (!navigator.bluetooth) {
-                alert('Bluetooth not supported on this device');
+                // No BLE: redirect user to Devices tab
+                const trans = translations[currentLang];
+                const hint = document.getElementById('homeConnectHint');
+                hint.textContent = trans.homeConnectHint;
+                hint.style.display = 'block';
+                navigateTo('devices');
                 return;
             }
 
@@ -1203,32 +1467,126 @@
                     optionalServices: ['generic_access']
                 });
 
-                const server = await device.gatt.connect();
-                connectedDevice = device;
-                isConnected = true;
-                
-                updateStatus('connected');
-                document.getElementById('connectBtn').style.display = 'none';
-                document.getElementById('stopBtn').style.display = 'block';
-                
-                // Store device
-                localStorage.setItem('lastDevice', device.id);
+                await connectToGattDevice(device);
             } catch (error) {
                 console.error('Connection error:', error);
                 updateStatus('disconnected');
             }
         }
 
-        async function sendVibrationCommand(intensity) {
-            if (!connectedDevice || !isConnected) return;
+        async function connectToGattDevice(device) {
+            try {
+                const server = await device.gatt.connect();
+                let service;
+                try {
+                    service = await server.getPrimaryService('0000fff0-0);
+                    const paste = (e.clipboardData || window.clipboardData).getData('text').replace(/[^0-9]/g, '');
+                    for (let i = 0; i < 4 && i < paste.length; i++) {
+                        inputs[i].value = paste[i];
+                    }
+                    if (paste.length >= 4) inputs[3].focus();
+                    updateCodeSubmitBtn();
+                });
+            });
+        }
 
+        function updateCodeSubmitBtn() {
+            const code = getEnteredCode();
+            document.getElementById('codeSubmitBtn').disabled = code.length !== 4;
+        }
+
+        function getEnteredCode() {
+            return ['code1','code2','code3','code4'].map(id => document.getElementById(id).value).join('');
+        }
+
+        function submitCode() {
+            const code = getEnteredCode();
+            if (code.length === 4) {
+                connectWithCode(code);
+            }
+        }
+
+        async function connectWithCode(code) {
+            updateStatus('scanning');
+
+            // If BLE is available, use the code to filter/find the device
+            if (navigator.bluetooth) {
+                try {
+                    // Try to find a device advertising with this code in its name
+                    const device = await navigator.bluetooth.requestDevice({
+                        filters: [
+                            { namePrefix: 'MF' },
+                            { namePrefix: 'LVS' },
+                            { namePrefix: 'Love' },
+                            { services: ['0000fff0-0000-1000-8000-00805f9b34fb'] },
+                            { services: ['0000ffe0-0000-1000-8000-00805f9b34fb'] }
+                        ],
+                        optionalServices: [
+                            '0000fff0-0000-1000-8000-00805f9b34fb',
+                            '0000ffe0-0000-1000-8000-00805f9b34fb',
+                            'generic_access'
+                        ]
+                    });
+                    await connectToGattDevice(device);
+                    return;
+                } catch (error) {
+                    console.error('BLE code connect error:', error);
+                }
+            }
+
+            // Fallback: store the code for later use (e.g., via cloud relay)
+            localStorage.setItem('deviceCode', code);
+            updateStatus('disconnected');
+            const msg = currentLang === 'nl'
+                ? 'Code ' + code + ' opgeslagen. Bluetooth is nodig voor directe verbinding. Probeer op een apparaat met Bluetooth-ondersteuning.'
+                : 'Code ' + code + ' saved. Bluetooth is required for direct connection. Try on a device with Bluetooth support.';
+            alert(msg);
+        }
+
+        async function tryConnectByName(name) {
+            if (!navigator.bluetooth) {
+                updateStatus('disconnected');
+                return;
+            }
+            try {
+                const device = await navigator.bluetooth.requestDevice({
+                    filters: [{ name: name }],
+                    optionalServices: [
+                        '0000fff0-0000-1000-8000-00805f9b34fb',
+                        '0000ffe0-0000-1000-8000-00805f9b34fb'
+                    ]
+                });
+                await connectToGattDevice(device);
+            } catch (error) {
+                console.error('Connect by name error:', error);
+                updateStatus('disconnected');
+            }
+        }
+
+        async function getCharacteristic() {
+            if (bleCharacteristic) return bleCharacteristic;
+            if (!connectedDevice || !connectedDevice.gatt.connected) return null;
             try {
                 const server = await connectedDevice.gatt.connect();
-                const service = await server.getPrimaryService('0000fff0-0000-1000-8000-00805f9b34fb');
-                const characteristic = await service.getCharacteristic('0000fff2-0000-1000-8000-00805f9b34fb');
+                let service;
+                try {
+                    service = await server.getPrimaryService('0000fff0-0000-1000-8000-00805f9b34fb');
+                } catch {
+                    service = await server.getPrimaryService('0000ffe0-0000-1000-8000-00805f9b34fb');
+                }
+                bleCharacteristic = await service.getCharacteristic('0000fff2-0000-1000-8000-00805f9b34fb');
+                return bleCharacteristic;
+            } catch (error) {
+                console.error('Get characteristic error:', error);
+                return null;
+            }
+        }
 
-                const command = new Uint8Array([0x03, intensity]);
-                await characteristic.writeValue(command);
+        async function sendVibrationCommand(intensity) {
+            if (!connectedDevice || !isConnected) return;
+            try {
+                const char = await getCharacteristic();
+                if (char) await char.writeValue(new Uint8Array([0x03, intensity]));
             } catch (error) {
                 console.error('Write error:', error);
             }
@@ -1238,24 +1596,15 @@
             if (!connectedDevice || !isConnected) return;
 
             const patternCommands = {
-                pulse: 0x01,
-                wave: 0x02,
-                escalate: 0x04,
-                rhythm: 0x05,
-                knock: 0x06,
-                vibrate: 0x07,
-                burst: 0x08,
-                custom: 0x09
+                pulse: 0x01, wave: 0x02, escalate: 0x04, rhythm: 0x05,
+                knock: 0x06, vibrate: 0x07, burst: 0x08, custom: 0x09
             };
 
             try {
-                const server = await connectedDevice.gatt.connect();
-                const service = await server.getPrimaryService('0000fff0-0000-1000-8000-00805f9b34fb');
-                const characteristic = await service.getCharacteristic('0000fff2-0000-1000-8000-00805f9b34fb');
-
+                const char = await getCharacteristic();
+                if (!char) return;
                 const intensity = parseInt(document.getElementById('powerSlider').value);
-                const command = new Uint8Array([patternCommands[pattern] || 0x01, intensity]);
-                await characteristic.writeValue(command);
+                await char.writeValue(new Uint8Array([patternCommands[pattern] || 0x01, intensity]));
             } catch (error) {
                 console.error('Pattern error:', error);
             }
@@ -1263,17 +1612,13 @@
 
         async function stopDevice() {
             if (!connectedDevice) return;
-
             try {
-                const server = await connectedDevice.gatt.connect();
-                const service = await server.getPrimaryService('0000fff0-0000-1000-8000-00805f9b34fb');
-                const characteristic = await service.getCharacteristic('0000fff2-0000-1000-8000-00805f9b34fb');
-
-                await characteristic.writeValue(new Uint8Array([0x00, 0x00]));
-                
+                const char = await getCharacteristic();
+                if (char) await char.writeValue(new Uint8Array([0x00, 0x00]));
                 disconnectDevice();
             } catch (error) {
                 console.error('Stop error:', error);
+                disconnectDevice();
             }
         }
 
@@ -1281,9 +1626,9 @@
             if (connectedDevice && connectedDevice.gatt && connectedDevice.gatt.connected) {
                 connectedDevice.gatt.disconnect();
             }
-            
             isConnected = false;
             connectedDevice = null;
+            bleCharacteristic = null;
             updateStatus('disconnected');
             document.getElementById('connectBtn').style.display = 'block';
             document.getElementById('stopBtn').style.display = 'none';
@@ -1293,48 +1638,41 @@
 
         async function startScan() {
             if (!navigator.bluetooth) {
-                alert('Bluetooth not supported');
+                alert(currentLang === 'nl' ? 'Bluetooth niet beschikbaar' : 'Bluetooth not supported');
                 return;
             }
 
             try {
                 updateStatus('scanning');
                 const statusEl = document.getElementById('scanStatus');
-                statusEl.textContent = 'Scanning for devices...';
+                statusEl.textContent = currentLang === 'nl' ? 'Selecteer je apparaat...' : 'Select your device...';
                 statusEl.style.display = 'block';
 
-                // Simulate scan - in real app, would use GATT scanning
-                foundDevices = [
-                    { name: 'MyFantasy Device 1', id: 'dev1', rssi: -45 },
-                    { name: 'MyFantasy Device 2', id: 'dev2', rssi: -67 }
-                ];
+                // Real BLE device selection via browser prompt
+                const device = await navigator.bluetooth.requestDevice({
+                    filters: [
+                        { namePrefix: 'MF' },
+                        { namePrefix: 'LVS' },
+                        { namePrefix: 'Love' },
+                        { services: ['0000fff0-0000-1000-8000-00805f9b34fb'] },
+                        { services: ['0000ffe0-0000-1000-8000-00805f9b34fb'] }
+                    ],
+                    optionalServices: [
+                        '0000fff0-0000-1000-8000-00805f9b34fb',
+                        '0000ffe0-0000-1000-8000-00805f9b34fb',
+                        'generic_access'
+                    ]
+                });
 
-                displayDevices();
-                setTimeout(() => {
-                    updateStatus('disconnected');
-                }, 3000);
+                statusEl.textContent = (currentLang === 'nl' ? 'Verbinden met ' : 'Connecting to ') + (device.name || 'device') + '...';
+                await connectToGattDevice(device);
+                statusEl.style.display = 'none';
             } catch (error) {
                 console.error('Scan error:', error);
+                const statusEl = document.getElementById('scanStatus');
+                statusEl.textContent = currentLang === 'nl' ? 'Scan geannuleerd of mislukt' : 'Scan cancelled or failed';
+                updateStatus('disconnected');
             }
-        }
-
-        function displayDevices() {
-            const list = document.getElementById('devicesList');
-            list.innerHTML = '';
-
-            foundDevices.forEach(device => {
-                const item = document.createElement('div');
-                item.className = 'device-item';
-                item.innerHTML = `
-                    <div class="device-info">
-                        <h3>${device.name}</h3>
-                        <p>Signal: ${device.rssi} dBm</p>
-                    </div>
-                    <button class="btn-connect-small">Connect</button>
-                `;
-                item.querySelector('.btn-connect-small').addEventListener('click', connectDevice);
-                list.appendChild(item);
-            });
         }
 
         function copyShareLink() {
