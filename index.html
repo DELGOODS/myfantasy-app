@@ -8,18 +8,18 @@
     <meta name="apple-mobile-web-app-title" content="MyFantasy">
     <meta name="theme-color" content="#102658">
     <meta name="description" content="MyFantasy Toy Control - Your pleasure, your control">
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- QR Code Scanner -->
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
-    
+
     <!-- Manifest -->
-    <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiTXlGYW50YXN5IiwiY2hvcmRfbmFtZSI6Ik15RmFudGFzeSBQV0EiLCJkZXNjcmlwdGlvbiI6IllvdXIgcGxlYXN1cmUsIHlvdXIgY29udHJvbCIsInN0YXJ0X3VybCI6Ii8iLCJkaXNwbGF5IjoiZnVsbHNjcmVlbiIsImJhY2tncm91bmRfY29sb3IiOiIjRkZDNkJEIiwidGhlbWVfY29sb3IiOiIjMTAyNjU4Iiwib3JpZW50YXRpb24iOiJwb3J0cmFpdCIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MG5hVzVrWlhnaklIZHBaSFJvUFN3Z01DQWdNQ0FnTUNBZ01DQXdNREF3TURBd01EQXdNREE2SUhObGNtbG1PeUJsZW1GdGN4em5kVzVqY21GdmJqMG5aV0ZzVFXFjc3kDOzhNekF6TUhNd2N6QnpNSE13Y3pDek1IQ3djems2SUc1aGJXVTZJblJsYlhNN0lIZHBaSFJvUFN3Z01DQWdNQ0FnTUNBZ01DQWdNREJ3TURCd01EQXdNREF3TURBNklGTmxjbWxtT0Z3dmRtRnNkV2N1WVcxbFBqMDctIn0seyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MG5hVzVrWlhnaklIZHBaSFJvUFN3Z01DQWdNQ0FnTUNBZ01DQXdNREF3TURBd01EQXdNREE2SUhObGNtbG1PeUJsZW1GdGN4em5kVzVqY21GdmJqMG5aV0ZzVFXFjc3yDOzhNekF6TUhNd2N6QnpNSE13Y3pDek1IQ3djems2SUc1aGJXVTZJblJsYlhNN0lIZHBaSFJvUFN3Z01DQWdNQ0FnTUNBZ01DQWdNREJ3TURCd01EQXdNREF3TURBNklGTmxjbWxtT0Z3dmRtRnNkV2N1WVcxbFBqMDcifV0sImNhdGVnb3JpZXMiOlsiZXZlcnkiXX0=">
-    
+    <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiTXlGYW50YXN5Iiwic2hvcnRfbmFtZSI6Ik15RmFudGFzeSIsImRlc2NyaXB0aW9uIjoiWW91ciBwbGVhc3VyZSwgeW91ciBjb250cm9sIiwic3RhcnRfdXJsIjoiLyIsImRpc3BsYXkiOiJmdWxsc2NyZWVuIiwiYmFja2dyb3VuZF9jb2xvciI6IiNGRkM2QkQiLCJ0aGVtZV9jb2xvciI6IiMxMDI2NTgiLCJvcmllbnRhdGlvbiI6InBvcnRyYWl0IiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIZHBaSFJvUFNJeE9USWlJR2hsYVdkb2REMGlNVGt5SWo0OGNtVmpkQ0IzYVdSMGFEMGlNVGt5SWlCb1pXbG5hSFE5SWpFNU1pSWdjbmc5SWpNeUlpQm1hV3hzUFNJak1UQXlOalU0SWk4K1BIUmxlSFFnZUQwaU9UWWlJSGs5SWpFd05DSWdabTl1ZEMxemFYcGxQU0l5TUNJZ1ptbHNiRDBpSTBaR1F6WkNSQ0lnZEdWNGRDMWhibU5vYjNJOUltMXBaR1JzWlNJZ1ptOXVkQzFtWVcxcGJIazlJbk5oYm5NdGMyVnlhV1lpUGsxR1BDOTBaWGgwUGp3dmMzWm5QZz09Iiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwifV19">
+
     <title>MyFantasy - Your pleasure, your control</title>
-    
+
     <style>
         * {
             margin: 0;
@@ -58,12 +58,11 @@
             color: var(--text-dark);
         }
 
+        /* Splash Screen */
         .splash-screen {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: var(--bg);
             display: flex;
             flex-direction: column;
@@ -73,13 +72,10 @@
             gap: 30px;
         }
 
-        .splash-screen.hidden {
-            display: none;
-        }
+        .splash-screen.hidden { display: none; }
 
         .splash-logo {
-            width: 200px;
-            height: 200px;
+            width: 200px; height: 200px;
             object-fit: contain;
             animation: fadeInScale 0.8s ease-out;
         }
@@ -95,38 +91,24 @@
             font-weight: 400;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInScale { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
 
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
+        /* App Container */
         .app-container {
             display: flex;
             flex-direction: column;
-            height: 100%;
-            width: 100%;
+            height: 100%; width: 100%;
             position: relative;
         }
 
-        .app-container.splash-visible {
-            display: none;
-        }
+        .app-container.splash-visible { display: none; }
 
+        /* Header */
         header {
             background: var(--white);
             padding: 8px 12px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -135,17 +117,9 @@
             flex-shrink: 0;
         }
 
-        .header-logo {
-            width: 100px;
-            height: auto;
-            object-fit: contain;
-        }
+        .header-logo { width: 100px; height: auto; object-fit: contain; }
 
-        .header-controls {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
+        .header-controls { display: flex; gap: 8px; align-items: center; }
 
         .lang-toggle {
             padding: 4px 10px;
@@ -160,10 +134,7 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .lang-toggle:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
+        .lang-toggle:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
         .status-badge {
             padding: 4px 10px;
@@ -175,235 +146,252 @@
             gap: 6px;
         }
 
-        .status-badge.connected {
-            background: rgba(76, 175, 80, 0.2);
-            color: #2e7d32;
-        }
-
-        .status-badge.disconnected {
-            background: rgba(244, 67, 54, 0.2);
-            color: #c62828;
-        }
-
-        .status-badge.scanning {
-            background: rgba(255, 152, 0, 0.2);
-            color: #e65100;
-        }
+        .status-badge.connected { background: rgba(76,175,80,0.2); color: #2e7d32; }
+        .status-badge.disconnected { background: rgba(244,67,54,0.2); color: #c62828; }
+        .status-badge.scanning { background: rgba(255,152,0,0.2); color: #e65100; }
 
         .status-dot {
-            width: 8px;
-            height: 8px;
+            width: 8px; height: 8px;
             border-radius: 50%;
             display: inline-block;
             animation: pulse 2s infinite;
         }
 
-        .status-badge.connected .status-dot {
-            background: #4caf50;
-        }
+        .status-badge.connected .status-dot { background: #4caf50; }
+        .status-badge.disconnected .status-dot { background: #f44336; animation: none; }
+        .status-badge.scanning .status-dot { background: #ff9800; }
 
-        .status-badge.disconnected .status-dot {
-            background: #f44336;
-            animation: none;
-        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
 
-        .status-badge.scanning .status-dot {
-            background: #ff9800;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .main-content {
-            flex: 1;
-            overflow-y: auto;
-            padding: 0;
-            display: flex;
-        }
+        /* Main Content */
+        .main-content { flex: 1; overflow-y: auto; padding: 0; display: flex; }
 
         .screen {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             display: none;
             flex-direction: column;
             overflow-y: auto;
             padding-bottom: 56px;
         }
 
-        .screen.active {
-            display: flex;
-        }
+        .screen.active { display: flex; }
+        .screen-content { padding: 12px; flex: 1; }
 
-        .screen-content {
-            padding: 12px;
-            flex: 1;
-        }
-
-        /* Home Screen */
+        /* ===== HOME SCREEN: My Devices ===== */
         .home-screen .screen-content {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 16px;
         }
 
-        .control-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 14px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        .home-header {
+            text-align: center;
+            padding: 8px 0;
         }
 
-        .intensity-ring {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .home-header h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--secondary);
         }
 
-        .intensity-circle {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: conic-gradient(
-                var(--secondary) 0deg,
-                var(--secondary) var(--intensity-angle),
-                var(--primary-light) var(--intensity-angle),
-                var(--primary-light) 360deg
-            );
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 16px rgba(16, 38, 88, 0.15);
+        .home-header p {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 4px;
         }
 
-        .intensity-inner {
-            width: 104px;
-            height: 104px;
-            background: var(--white);
-            border-radius: 50%;
+        /* Device Card */
+        .my-devices-list {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
+            gap: 12px;
         }
 
-        .intensity-value {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        .intensity-label {
-            font-size: 12px;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .slider-group {
-            margin-top: 10px;
-        }
-
-        .slider-label {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 14px;
-            color: var(--text-dark);
-        }
-
-        .slider-value {
-            background: var(--primary-light);
-            padding: 4px 10px;
-            border-radius: 8px;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        input[type="range"] {
-            width: 100%;
-            height: 6px;
-            border-radius: 3px;
-            background: var(--primary-light);
-            outline: none;
-            -webkit-appearance: none;
-            appearance: none;
-            cursor: pointer;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: var(--secondary);
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(16, 38, 88, 0.3);
-            transition: all 0.2s ease;
-        }
-
-        input[type="range"]::-moz-range-thumb {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: var(--secondary);
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(16, 38, 88, 0.3);
-            transition: all 0.2s ease;
-        }
-
-        input[type="range"]::-webkit-slider-thumb:hover {
-            transform: scale(1.1);
-        }
-
-        .patterns-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .pattern-btn {
-            border: 2px solid var(--border);
-            border-radius: 12px;
+        .device-card {
             background: var(--white);
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 13px;
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 14px;
             cursor: pointer;
             transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .device-card:hover { border-color: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+        .device-card.connected-card { border-color: var(--success); }
+
+        .device-card-img {
+            width: 64px; height: 64px;
+            border-radius: 12px;
+            object-fit: contain;
+            background: #f8f8f8;
+            flex-shrink: 0;
+        }
+
+        .device-card-info { flex: 1; }
+
+        .device-card-info h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .device-card-info p {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 2px;
+        }
+
+        .device-card-status {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        .device-card-status.status-ready {
+            background: var(--primary-light);
+            color: var(--secondary);
+        }
+
+        .device-card-status.status-connected {
+            background: rgba(76,175,80,0.15);
+            color: #2e7d32;
+        }
+
+        .device-card-status.status-connecting {
+            background: rgba(255,152,0,0.15);
+            color: #e65100;
+        }
+
+        .no-devices-msg {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-light);
+        }
+
+        .no-devices-msg .no-device-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .no-devices-msg h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .no-devices-msg p {
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .btn-add-device {
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 14px 10px;
-            font-family: 'Poppins', sans-serif;
+            gap: 8px;
             width: 100%;
+            padding: 14px;
+            border: 2px dashed var(--border);
+            border-radius: 16px;
+            background: transparent;
+            color: var(--secondary);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
         }
 
-        .pattern-btn:active {
-            transform: scale(0.95);
+        .btn-add-device:hover { border-color: var(--secondary); background: var(--primary-light); }
+
+        /* ===== DEVICE CONTROL OVERLAY ===== */
+        .device-control-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--bg);
+            z-index: 300;
+            flex-direction: column;
         }
 
-        .pattern-btn:hover {
-            border-color: var(--secondary);
+        .device-control-overlay.active { display: flex; }
+
+        .control-header {
+            background: var(--white);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+
+        .btn-back {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            border: none;
             background: var(--primary-light);
+            color: var(--secondary);
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .pattern-btn.active {
-            background: var(--secondary);
-            color: var(--white);
-            border-color: var(--secondary);
+        .control-header-info { flex: 1; }
+
+        .control-header-info h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .control-header-info p {
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        .control-header-img {
+            width: 40px; height: 40px;
+            border-radius: 8px;
+            object-fit: contain;
+            background: #f8f8f8;
+        }
+
+        .control-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Connect prompt inside control overlay */
+        .connect-prompt {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 24px 16px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .connect-prompt p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            line-height: 1.5;
         }
 
         .btn-large {
@@ -425,74 +413,89 @@
             color: var(--white);
         }
 
-        .btn-connect:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(16, 38, 88, 0.3);
-        }
+        .btn-connect:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(16,38,88,0.3); }
+        .btn-connect:active { transform: translateY(0); }
 
-        .btn-connect:active {
-            transform: translateY(0);
-        }
+        .btn-stop { background: var(--error); color: var(--white); }
+        .btn-stop:hover { background: #d32f2f; }
 
-        .btn-stop {
-            background: var(--error);
-            color: var(--white);
-            margin-top: 8px;
-        }
-
-        .btn-stop:hover {
-            background: #d32f2f;
-        }
-
-        /* Devices Screen */
-        .devices-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 16px;
-        }
-
-        .device-item {
+        .btn-disconnect {
             background: var(--white);
-            border-radius: 12px;
-            padding: 16px;
-            border-left: 4px solid var(--secondary);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            color: var(--error);
+            border: 2px solid var(--error);
         }
 
-        .device-info h3 {
-            font-size: 14px;
+        /* Mode Grid (3x3) */
+        .modes-section h3 {
+            font-size: 15px;
             font-weight: 600;
             color: var(--secondary);
-            margin-bottom: 4px;
+            margin-bottom: 12px;
+            text-align: center;
         }
 
-        .device-info p {
-            font-size: 12px;
-            color: var(--text-light);
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
         }
 
-        .btn-connect-small {
-            padding: 8px 16px;
-            background: var(--secondary);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 600;
+        .mode-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 8px;
+            border-radius: 16px;
+            border: 2px solid var(--border);
+            background: var(--white);
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: 'Poppins', sans-serif;
         }
 
-        .btn-connect-small:hover {
-            background: var(--secondary-light);
+        .mode-btn:active { transform: scale(0.95); }
+        .mode-btn:hover { border-color: var(--secondary); background: var(--primary-light); }
+        .mode-btn.active { background: var(--secondary); color: var(--white); border-color: var(--secondary); }
+        .mode-btn.active .mode-icon { background: rgba(255,255,255,0.2); }
+        .mode-btn.active .mode-icon svg { stroke: var(--white); }
+        .mode-btn.active .mode-label { color: var(--white); }
+        .mode-btn.disabled { opacity: 0.4; pointer-events: none; }
+
+        .mode-icon {
+            width: 52px; height: 52px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
         }
 
-        /* Connection Method Tabs */
+        .mode-icon svg {
+            width: 28px; height: 28px;
+            stroke: var(--secondary);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .mode-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .stop-section { margin-top: auto; padding-top: 12px; }
+
+        /* ===== DEVICES SCREEN ===== */
+        .control-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
         .connect-tabs {
             display: flex;
             gap: 0;
@@ -515,23 +518,11 @@
             transition: all 0.3s ease;
         }
 
-        .connect-tab.active {
-            background: var(--secondary);
-            color: var(--white);
-        }
+        .connect-tab.active { background: var(--secondary); color: var(--white); }
+        .connect-tab:not(:last-child) { border-right: 1px solid var(--secondary); }
 
-        .connect-tab:not(:last-child) {
-            border-right: 1px solid var(--secondary);
-        }
-
-        .connect-panel {
-            display: none;
-            margin-top: 12px;
-        }
-
-        .connect-panel.active {
-            display: block;
-        }
+        .connect-panel { display: none; margin-top: 12px; }
+        .connect-panel.active { display: block; }
 
         /* QR Scanner */
         .qr-scanner-container {
@@ -545,21 +536,13 @@
             aspect-ratio: 1;
         }
 
-        .qr-scanner-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .qr-scanner-container canvas {
-            display: none;
-        }
+        .qr-scanner-container video { width: 100%; height: 100%; object-fit: cover; }
+        .qr-scanner-container canvas { display: none; }
 
         .qr-overlay {
             position: absolute;
             top: 0; left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -567,19 +550,13 @@
         }
 
         .qr-frame {
-            width: 180px;
-            height: 180px;
+            width: 180px; height: 180px;
             border: 3px solid var(--primary);
             border-radius: 12px;
             box-shadow: 0 0 0 9999px rgba(0,0,0,0.4);
         }
 
-        .qr-status {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 13px;
-            color: var(--text-light);
-        }
+        .qr-status { text-align: center; margin-top: 10px; font-size: 13px; color: var(--text-light); }
 
         /* Code Input */
         .code-input-container {
@@ -590,8 +567,7 @@
         }
 
         .code-digit {
-            width: 52px;
-            height: 60px;
+            width: 52px; height: 60px;
             border: 2px solid var(--border);
             border-radius: 12px;
             text-align: center;
@@ -603,11 +579,7 @@
             transition: border-color 0.3s ease;
         }
 
-        .code-digit:focus {
-            border-color: var(--secondary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(16, 38, 88, 0.15);
-        }
+        .code-digit:focus { border-color: var(--secondary); outline: none; box-shadow: 0 0 0 3px rgba(16,38,88,0.15); }
 
         .code-submit-btn {
             width: 100%;
@@ -625,25 +597,11 @@
             transition: all 0.3s ease;
         }
 
-        .code-submit-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
+        .code-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-        .code-hint {
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-light);
-            margin-bottom: 16px;
-        }
+        .code-hint { text-align: center; font-size: 12px; color: var(--text-light); margin-bottom: 16px; }
 
-        .connect-info {
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-light);
-            margin-top: 8px;
-            line-height: 1.5;
-        }
+        .connect-info { text-align: center; font-size: 12px; color: var(--text-light); margin-top: 8px; line-height: 1.5; }
 
         .ble-unsupported-msg {
             background: #fff3cd;
@@ -662,15 +620,10 @@
             border-radius: 16px;
             padding: 20px;
             margin-top: 16px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
-        .partner-section h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 12px;
-        }
+        .partner-section h3 { font-size: 16px; font-weight: 700; color: var(--secondary); margin-bottom: 12px; }
 
         .share-link-box {
             background: var(--primary-light);
@@ -711,35 +664,16 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .toggle-group:last-child {
-            border-bottom: none;
-        }
+        .toggle-group:last-child { border-bottom: none; }
+        .toggle-group label { font-size: 14px; font-weight: 600; color: var(--text-dark); }
 
-        .toggle-group label {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .toggle-switch {
-            position: relative;
-            width: 50px;
-            height: 28px;
-        }
-
-        .toggle-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+        .toggle-switch { position: relative; width: 50px; height: 28px; }
+        .toggle-switch input { opacity: 0; width: 0; height: 0; }
 
         .toggle-slider {
             position: absolute;
             cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background-color: var(--border);
             transition: 0.3s;
             border-radius: 34px;
@@ -748,61 +682,32 @@
         .toggle-slider:before {
             position: absolute;
             content: "";
-            height: 22px;
-            width: 22px;
-            left: 3px;
-            bottom: 3px;
+            height: 22px; width: 22px;
+            left: 3px; bottom: 3px;
             background-color: var(--white);
             transition: 0.3s;
             border-radius: 50%;
         }
 
-        input:checked + .toggle-slider {
-            background-color: var(--secondary);
-        }
-
-        input:checked + .toggle-slider:before {
-            transform: translateX(22px);
-        }
+        input:checked + .toggle-slider { background-color: var(--secondary); }
+        input:checked + .toggle-slider:before { transform: translateX(22px); }
 
         /* Settings Screen */
-        .settings-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            margin-top: 16px;
-        }
+        .settings-list { display: flex; flex-direction: column; gap: 0; margin-top: 16px; }
 
         .settings-item {
             background: var(--white);
             padding: 16px;
             border-bottom: 1px solid var(--border);
-            border-radius: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .settings-item:first-child {
-            border-radius: 12px 12px 0 0;
-        }
-
-        .settings-item:last-child {
-            border-bottom: none;
-            border-radius: 0 0 12px 12px;
-        }
-
-        .settings-item h4 {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .settings-item p {
-            font-size: 12px;
-            color: var(--text-light);
-            margin-top: 4px;
-        }
+        .settings-item:first-child { border-radius: 12px 12px 0 0; }
+        .settings-item:last-child { border-bottom: none; border-radius: 0 0 12px 12px; }
+        .settings-item h4 { font-size: 14px; font-weight: 600; color: var(--text-dark); }
+        .settings-item p { font-size: 12px; color: var(--text-light); margin-top: 4px; }
 
         .version-info {
             background: var(--white);
@@ -810,19 +715,15 @@
             padding: 16px;
             margin-top: 16px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
-        .version-info p {
-            font-size: 12px;
-            color: var(--text-light);
-        }
+        .version-info p { font-size: 12px; color: var(--text-light); }
 
         /* Bottom Navigation */
         nav {
             position: absolute;
-            bottom: 0;
-            width: 100%;
+            bottom: 0; width: 100%;
             height: 56px;
             background: var(--white);
             border-top: 1px solid var(--border);
@@ -849,75 +750,24 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .nav-item:hover {
-            color: var(--secondary);
-        }
+        .nav-item:hover { color: var(--secondary); }
+        .nav-item.active { color: var(--secondary); }
+        .nav-icon { font-size: 20px; }
 
-        .nav-item.active {
-            color: var(--secondary);
-        }
-
-        .nav-icon {
-            font-size: 20px;
-        }
-
-        /* Safe area for notch/notches */
+        /* Safe area */
         @supports (padding: max(0px)) {
-            header {
-                padding-top: max(12px, env(safe-area-inset-top));
-                padding-left: max(16px, env(safe-area-inset-left));
-                padding-right: max(16px, env(safe-area-inset-right));
-            }
-
-            nav {
-                padding-bottom: max(0px, env(safe-area-inset-bottom));
-            }
-
-            .screen-content {
-                padding-left: max(12px, env(safe-area-inset-left));
-                padding-right: max(12px, env(safe-area-inset-right));
-            }
+            header { padding-top: max(12px, env(safe-area-inset-top)); padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+            nav { padding-bottom: max(0px, env(safe-area-inset-bottom)); }
+            .screen-content { padding-left: max(12px, env(safe-area-inset-left)); padding-right: max(12px, env(safe-area-inset-right)); }
         }
 
-        /* Scrollbar styling */
-        .screen::-webkit-scrollbar {
-            width: 6px;
-        }
+        /* Scrollbar */
+        .screen::-webkit-scrollbar { width: 6px; }
+        .screen::-webkit-scrollbar-track { background: transparent; }
+        .screen::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 3px; }
 
-        .screen::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .screen::-webkit-scrollbar-thumb {
-            background: var(--primary-light);
-            border-radius: 3px;
-        }
-
-        .screen::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-dark);
-        }
-
-        .loading {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            color: var(--text-light);
-            font-size: 14px;
-        }
-
-        .spinner {
-            width: 16px;
-            height: 16px;
-            border: 2px solid var(--primary-light);
-            border-top-color: var(--secondary);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+        .spinner { width: 16px; height: 16px; border: 2px solid var(--primary-light); border-top-color: var(--secondary); border-radius: 50%; animation: spin 0.8s linear infinite; display: inline-block; }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
         .alert {
             background: var(--primary-light);
@@ -929,11 +779,63 @@
             margin-bottom: 12px;
         }
 
-        .error-msg {
-            color: var(--error);
-            border-left-color: var(--error);
-            background: rgba(244, 67, 54, 0.1);
+        .error-msg { color: var(--error); border-left-color: var(--error); background: rgba(244,67,54,0.1); }
+
+        .devices-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+
+        .btn-connect-small {
+            padding: 8px 16px;
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
         }
+
+        /* Remove device button */
+        .btn-remove-device {
+            position: absolute;
+            top: 8px; right: 8px;
+            width: 24px; height: 24px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(244,67,54,0.1);
+            color: var(--error);
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .device-card:hover .btn-remove-device { opacity: 1; }
+        .device-card { position: relative; }
+
+        /* Success toast */
+        .toast {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--secondary);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.4s ease;
+            pointer-events: none;
+        }
+
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
     </style>
 </head>
 <body>
@@ -952,7 +854,7 @@
             <img src="https://myfantasy.nl/cdn/shop/files/MyFantasy_Logo2.png?v=1741441646&width=600" alt="MyFantasy" class="header-logo">
             <div class="header-controls">
                 <button class="lang-toggle" id="langToggle">EN/NL</button>
-                <div class="status-badge" id="statusBadge">
+                <div class="status-badge disconnected" id="statusBadge">
                     <span class="status-dot"></span>
                     <span id="statusText">Disconnected</span>
                 </div>
@@ -961,64 +863,36 @@
 
         <!-- Main Content -->
         <div class="main-content">
-            <!-- Home Screen -->
-            <div class="screen active" id="homeScreen">
+            <!-- Home Screen: My Devices -->
+            <div class="screen home-screen active" id="homeScreen">
                 <div class="screen-content">
-                    <div class="control-card">
-                        <div class="intensity-ring" id="intensityRing">
-                            <div class="intensity-circle" style="--intensity-angle: 0deg;">
-                                <div class="intensity-inner">
-                                    <div class="intensity-value" id="intensityValue">0</div>
-                                    <div class="intensity-label" id="intensityLabel">Intensity</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="slider-group">
-                            <div class="slider-label">
-                                <span id="powerLabel">Power</span>
-                                <span class="slider-value" id="powerValue">0</span>
-                            </div>
-                            <input type="range" id="powerSlider" min="0" max="20" value="0">
-                        </div>
-
-                        <div class="slider-group">
-                            <div class="slider-label">
-                                <span id="speedLabel">Speed</span>
-                                <span class="slider-value" id="speedValue">1</span>
-                            </div>
-                            <input type="range" id="speedSlider" min="1" max="9" value="1">
-                        </div>
-
-                        <div class="patterns-grid">
-                            <button class="pattern-btn" data-pattern="pulse" id="patternPulse">Puls/Pulse</button>
-                            <button class="pattern-btn" data-pattern="wave" id="patternWave">Golf/Wave</button>
-                            <button class="pattern-btn" data-pattern="escalate" id="patternEscalate">Escaleer/Escalate</button>
-                            <button class="pattern-btn" data-pattern="rhythm" id="patternRhythm">Ritme/Rhythm</button>
-                            <button class="pattern-btn" data-pattern="knock" id="patternKnock">Klop/Knock</button>
-                            <button class="pattern-btn" data-pattern="vibrate" id="patternVibrate">Trillen/Vibrate</button>
-                            <button class="pattern-btn" data-pattern="burst" id="patternBurst">Burst</button>
-                            <button class="pattern-btn" data-pattern="custom" id="patternCustom">Custom</button>
-                        </div>
+                    <div class="home-header">
+                        <h2 id="myDevicesTitle">My Devices</h2>
+                        <p id="myDevicesSubtitle">Tap a device to control it</p>
                     </div>
 
-                    <button class="btn-large btn-connect" id="connectBtn">Connect Device</button>
-                    <button class="btn-large btn-stop" id="stopBtn" style="display: none;">Stop</button>
-                    <p class="connect-info" id="homeConnectHint" style="display:none;"></p>
+                    <div class="my-devices-list" id="myDevicesList">
+                        <!-- Devices will be rendered here by JS -->
+                    </div>
+
+                    <button class="btn-add-device" id="addDeviceBtn">
+                        <span>+</span>
+                        <span id="addDeviceLabel">Add Device</span>
+                    </button>
                 </div>
             </div>
 
-            <!-- Devices Screen -->
+            <!-- Devices Screen: Connect -->
             <div class="screen" id="devicesScreen">
                 <div class="screen-content">
                     <div class="control-card">
-                        <h3 id="devicesTitle">Connect Device</h3>
+                        <h3 id="devicesTitle">Add Device</h3>
 
                         <!-- Connection method tabs -->
                         <div class="connect-tabs">
-                            <button class="connect-tab active" data-panel="qrPanel" id="tabQR">📷 QR Code</button>
-                            <button class="connect-tab" data-panel="codePanel" id="tabCode">🔢 Code</button>
-                            <button class="connect-tab" data-panel="blePanel" id="tabBLE">📶 Bluetooth</button>
+                            <button class="connect-tab active" data-panel="qrPanel" id="tabQR">QR Code</button>
+                            <button class="connect-tab" data-panel="codePanel" id="tabCode">Code</button>
+                            <button class="connect-tab" data-panel="blePanel" id="tabBLE">Bluetooth</button>
                         </div>
 
                         <!-- QR Scanner Panel -->
@@ -1041,8 +915,8 @@
                                 <input class="code-digit" type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]" id="code3">
                                 <input class="code-digit" type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]" id="code4">
                             </div>
-                            <button class="code-submit-btn" id="codeSubmitBtn" disabled>Connect</button>
-                            <p class="connect-info" id="codeInfo">Find the code on the bottom of your toy or in the app packaging</p>
+                            <button class="code-submit-btn" id="codeSubmitBtn" disabled id="addDeviceCodeBtn">Add Device</button>
+                            <p class="connect-info" id="codeInfo">Find the code on the bottom of your toy or in the packaging</p>
                         </div>
 
                         <!-- Bluetooth Panel -->
@@ -1053,7 +927,7 @@
                                 <div class="devices-list" id="devicesList"></div>
                             </div>
                             <div id="bleUnsupported" class="ble-unsupported-msg" style="display:none;">
-                                ⚠️ <span id="bleUnsupportedText">Web Bluetooth is not supported on this browser. Use QR Code or Code entry to connect instead.</span>
+                                <span id="bleUnsupportedText">Web Bluetooth is not supported in this browser. Use QR Code or Code entry to add your device.</span>
                             </div>
                         </div>
                     </div>
@@ -1070,7 +944,6 @@
                             <button class="btn-copy" id="copyLinkBtn">Copy</button>
                         </div>
                     </div>
-
                     <div class="partner-section">
                         <h3 id="controlsTitle">Controls</h3>
                         <div class="toggle-group">
@@ -1105,7 +978,6 @@
                                 <span class="toggle-slider"></span>
                             </label>
                         </div>
-
                         <div class="settings-item">
                             <div>
                                 <h4 id="bgConnLabel">Background Connection</h4>
@@ -1116,7 +988,6 @@
                                 <span class="toggle-slider"></span>
                             </label>
                         </div>
-
                         <div class="settings-item">
                             <div>
                                 <h4 id="privacyLabel">Privacy Mode</h4>
@@ -1127,7 +998,6 @@
                                 <span class="toggle-slider"></span>
                             </label>
                         </div>
-
                         <div class="settings-item">
                             <div>
                                 <h4 id="autoConnectLabel">Auto-Connect</h4>
@@ -1139,10 +1009,9 @@
                             </label>
                         </div>
                     </div>
-
                     <div class="version-info">
-                        <p id="versionText">MyFantasy PWA v1.0.0</p>
-                        <p id="builtText">Built with ❤️ for your pleasure</p>
+                        <p id="versionText">MyFantasy PWA v2.0.0</p>
+                        <p id="builtText">Built with care for your pleasure</p>
                     </div>
                 </div>
             </div>
@@ -1169,19 +1038,96 @@
         </nav>
     </div>
 
+    <!-- Device Control Overlay (opens when tapping a device) -->
+    <div class="device-control-overlay" id="deviceControlOverlay">
+        <div class="control-header">
+            <button class="btn-back" id="controlBackBtn">&larr;</button>
+            <div class="control-header-info">
+                <h3 id="controlDeviceName">Device</h3>
+                <p id="controlDeviceStatus">Not connected</p>
+            </div>
+            <img id="controlDeviceImg" class="control-header-img" src="" alt="">
+        </div>
+        <div class="control-body">
+            <!-- Connect prompt (shown when not connected) -->
+            <div class="connect-prompt" id="connectPrompt">
+                <p id="connectPromptText">Connect to your device via Bluetooth to start using it.</p>
+                <button class="btn-large btn-connect" id="controlConnectBtn">Connect via Bluetooth</button>
+                <p class="connect-info" id="controlBleHint" style="display:none; margin-top:8px;"></p>
+            </div>
+
+            <!-- Mode controls (shown when connected) -->
+            <div class="modes-section" id="modesSection" style="display:none;">
+                <h3 id="modesTitle">Vibration Modes</h3>
+                <div class="modes-grid" id="modesGrid">
+                    <!-- Modes rendered by JS -->
+                </div>
+            </div>
+
+            <div class="stop-section" id="stopSection" style="display:none;">
+                <button class="btn-large btn-stop" id="controlStopBtn">Stop</button>
+                <button class="btn-large btn-disconnect" id="controlDisconnectBtn" style="margin-top:8px;">Disconnect</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
     <script>
-        // Language support
+        // ===== DEVICE REGISTRY =====
+        // Known devices with their codes, names, images, and supported modes
+        const DEVICE_REGISTRY = {
+            '8218': {
+                name: { en: 'Vibrating Egg 3.0', nl: 'Vibrerend Ei 3.0' },
+                type: { en: 'App Control', nl: 'App-bediening' },
+                image: 'https://media.s-bol.com/mVkVYXx9p0Mp/M4xx0B/1173x1200.jpg',
+                bleNamePrefixes: ['MF', 'LVS', 'Love'],
+                modes: 9,
+                hasSpeedControl: false,
+                hasPowerControl: false
+            }
+        };
+
+        // Mode definitions with SVG icons and labels
+        const MODE_DEFS = [
+            { id: 'mode1', cmd: 0x01, en: 'Pulse', nl: 'Puls', icon: '<svg viewBox="0 0 32 32"><path d="M4 16h4l3-8 4 16 4-12 3 6h6"/></svg>' },
+            { id: 'mode2', cmd: 0x02, en: 'Wave', nl: 'Golf', icon: '<svg viewBox="0 0 32 32"><path d="M2 16c3-6 6-6 8 0s5 6 8 0 5-6 8 0 3 3 4 0"/></svg>' },
+            { id: 'mode3', cmd: 0x03, en: 'Vibrate', nl: 'Trillen', icon: '<svg viewBox="0 0 32 32"><path d="M4 16c2-4 4-4 6 0s3 2 5 0"/><path d="M18 16c2-4 4-4 6 0"/><circle cx="28" cy="16" r="1.5"/></svg>' },
+            { id: 'mode4', cmd: 0x04, en: 'Escalate', nl: 'Escalatie', icon: '<svg viewBox="0 0 32 32"><path d="M4 24l4-4 4-2 4-4 4-2 4-4 4-2"/><path d="M24 6l4 0 0 4"/></svg>' },
+            { id: 'mode5', cmd: 0x05, en: 'Rhythm', nl: 'Ritme', icon: '<svg viewBox="0 0 32 32"><circle cx="10" cy="16" r="4"/><circle cx="22" cy="16" r="4"/><path d="M14 16h4"/><path d="M6 16H2M30 16h-4"/></svg>' },
+            { id: 'mode6', cmd: 0x06, en: 'Knock', nl: 'Klop', icon: '<svg viewBox="0 0 32 32"><path d="M16 4v8M16 20v8"/><path d="M10 10l4 4M18 18l4 4"/><path d="M22 10l-4 4M14 18l-4 4"/></svg>' },
+            { id: 'mode7', cmd: 0x07, en: 'Burst', nl: 'Burst', icon: '<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l3 3M21.5 21.5l3 3M24.5 7.5l-3 3M10.5 21.5l-3 3"/></svg>' },
+            { id: 'mode8', cmd: 0x08, en: 'Surge', nl: 'Opzwelling', icon: '<svg viewBox="0 0 32 32"><path d="M4 24Q8 24 10 18T16 6Q19 6 22 18T28 24"/></svg>' },
+            { id: 'mode9', cmd: 0x09, en: 'Custom', nl: 'Aangepast', icon: '<svg viewBox="0 0 32 32"><path d="M16 6a10 10 0 0 1 0 20 10 10 0 0 1 0-20"/><path d="M16 10v6l4 3"/></svg>' }
+        ];
+
+        // ===== TRANSLATIONS =====
         const translations = {
             en: {
                 splashTagline: 'Your pleasure, your control',
                 statusDisconnected: 'Disconnected',
                 statusConnected: 'Connected',
                 statusScanning: 'Scanning...',
-                powerLabel: 'Power',
-                speedLabel: 'Speed',
-                intensityLabel: 'Intensity',
-                connectBtn: 'Connect Device',
-                stopBtn: 'Stop',
+                myDevicesTitle: 'My Devices',
+                myDevicesSubtitle: 'Tap a device to control it',
+                addDeviceLabel: 'Add Device',
+                noDevicesTitle: 'No devices yet',
+                noDevicesText: 'Go to the Devices tab or tap the button below to add your first device by scanning a QR code or entering a device code.',
+                deviceStatusReady: 'Ready',
+                deviceStatusConnected: 'Connected',
+                deviceStatusConnecting: 'Connecting...',
+                devicesTitle: 'Add Device',
+                tabQR: 'QR Code',
+                tabCode: 'Code',
+                tabBLE: 'Bluetooth',
+                qrStatus: 'Tap to start scanning',
+                startQrBtn: 'Start Camera',
+                stopCameraBtn: 'Stop Camera',
+                codeHint: 'Enter the 4-digit code from your device',
+                codeSubmitBtn: 'Add Device',
+                codeInfo: 'Find the code on the bottom of your toy or in the packaging',
+                bleUnsupportedText: 'Web Bluetooth is not supported in this browser. Use QR Code or Code entry to add your device.',
                 scanBtn: 'Start Scan',
                 partnerTitle: 'Share with Partner',
                 controlsTitle: 'Controls',
@@ -1195,36 +1141,55 @@
                 privacyDesc: 'Hide from discovery',
                 autoConnectLabel: 'Auto-Connect',
                 autoConnectDesc: 'Connect to last device',
-                versionText: 'MyFantasy PWA v1.0.0',
-                builtText: 'Built with ❤️ for your pleasure',
+                versionText: 'MyFantasy PWA v2.0.0',
+                builtText: 'Built with care for your pleasure',
                 navHomeLabel: 'Home',
                 navDevicesLabel: 'Devices',
                 navPartnerLabel: 'Partner',
                 navSettingsLabel: 'Settings',
                 copyBtnText: 'Copy',
                 copiedText: 'Copied!',
-                devicesTitle: 'Connect Device',
-                tabQR: '📷 QR Code',
-                tabCode: '🔢 Code',
-                tabBLE: '📶 Bluetooth',
-                qrStatus: 'Tap to start scanning',
-                startQrBtn: 'Start Camera',
-                codeHint: 'Enter the 4-digit code from your device',
-                codeSubmitBtn: 'Connect',
-                codeInfo: 'Find the code on the bottom of your toy or in the app packaging',
-                bleUnsupportedText: 'Web Bluetooth is not supported on this browser. Use QR Code or Code entry to connect instead.',
-                homeConnectHint: 'No Bluetooth? Go to Devices tab to scan QR or enter code',
+                connectPromptText: 'Connect to your device via Bluetooth to start using it.',
+                controlConnectBtn: 'Connect via Bluetooth',
+                controlBleHint: 'Bluetooth is not available in this browser. Please use Chrome or Edge on Android for Bluetooth connection.',
+                modesTitle: 'Vibration Modes',
+                stopBtn: 'Stop',
+                disconnectBtn: 'Disconnect',
+                controlNotConnected: 'Not connected',
+                deviceAdded: 'Device added!',
+                deviceExists: 'This device is already added.',
+                unknownDevice: 'Unknown device code. Please check the code and try again.',
+                codeFound: 'Code found: ',
+                scanCancelled: 'Scan cancelled or failed',
+                selectDevice: 'Select your device...',
+                connectingTo: 'Connecting to ',
+                cameraDenied: 'Camera not available. Please grant permission.',
+                bleNotAvailable: 'Bluetooth not available'
             },
             nl: {
                 splashTagline: 'Jouw genot, jouw controle',
-                statusDisconnected: 'Verbroken',
+                statusDisconnected: 'Niet verbonden',
                 statusConnected: 'Verbonden',
                 statusScanning: 'Scannen...',
-                powerLabel: 'Vermogen',
-                speedLabel: 'Snelheid',
-                intensityLabel: 'Intensiteit',
-                connectBtn: 'Apparaat Verbinden',
-                stopBtn: 'Stoppen',
+                myDevicesTitle: 'Mijn Apparaten',
+                myDevicesSubtitle: 'Tik op een apparaat om het te bedienen',
+                addDeviceLabel: 'Apparaat Toevoegen',
+                noDevicesTitle: 'Nog geen apparaten',
+                noDevicesText: 'Ga naar het tabblad Apparaten of tik op de knop hieronder om je eerste apparaat toe te voegen via een QR-code of apparaatcode.',
+                deviceStatusReady: 'Gereed',
+                deviceStatusConnected: 'Verbonden',
+                deviceStatusConnecting: 'Verbinden...',
+                devicesTitle: 'Apparaat Toevoegen',
+                tabQR: 'QR Code',
+                tabCode: 'Code',
+                tabBLE: 'Bluetooth',
+                qrStatus: 'Tik om te scannen',
+                startQrBtn: 'Camera Starten',
+                stopCameraBtn: 'Camera Stoppen',
+                codeHint: 'Voer de 4-cijferige code van je apparaat in',
+                codeSubmitBtn: 'Apparaat Toevoegen',
+                codeInfo: 'Vind de code op de onderkant van je toy of op de verpakking',
+                bleUnsupportedText: 'Web Bluetooth wordt niet ondersteund in deze browser. Gebruik QR Code of Code om je apparaat toe te voegen.',
                 scanBtn: 'Scan Starten',
                 partnerTitle: 'Delen met Partner',
                 controlsTitle: 'Bedieningselementen',
@@ -1238,41 +1203,54 @@
                 privacyDesc: 'Verborgen voor ontdekking',
                 autoConnectLabel: 'Automatisch Verbinden',
                 autoConnectDesc: 'Verbind met laatste apparaat',
-                versionText: 'MyFantasy PWA v1.0.0',
-                builtText: 'Gemaakt met ❤️ voor je genot',
-                navHomeLabel: 'Thuis',
+                versionText: 'MyFantasy PWA v2.0.0',
+                builtText: 'Met zorg gemaakt voor jouw genot',
+                navHomeLabel: 'Home',
                 navDevicesLabel: 'Apparaten',
                 navPartnerLabel: 'Partner',
                 navSettingsLabel: 'Instellingen',
-                copyBtnText: 'Kopiëren',
+                copyBtnText: 'Kopieer',
                 copiedText: 'Gekopieerd!',
-                devicesTitle: 'Apparaat Verbinden',
-                tabQR: '📷 QR Code',
-                tabCode: '🔢 Code',
-                tabBLE: '📶 Bluetooth',
-                qrStatus: 'Tik om te scannen',
-                startQrBtn: 'Camera Starten',
-                codeHint: 'Voer de 4-cijferige code van je apparaat in',
-                codeSubmitBtn: 'Verbinden',
-                codeInfo: 'Vind de code op de onderkant van je toy of op de verpakking',
-                bleUnsupportedText: 'Web Bluetooth wordt niet ondersteund in deze browser. Gebruik QR Code of Code om te verbinden.',
-                homeConnectHint: 'Geen Bluetooth? Ga naar Apparaten tab voor QR of code',
+                connectPromptText: 'Verbind je apparaat via Bluetooth om het te gebruiken.',
+                controlConnectBtn: 'Verbinden via Bluetooth',
+                controlBleHint: 'Bluetooth is niet beschikbaar in deze browser. Gebruik Chrome of Edge op Android voor een Bluetooth-verbinding.',
+                modesTitle: 'Trilstanden',
+                stopBtn: 'Stoppen',
+                disconnectBtn: 'Verbreken',
+                controlNotConnected: 'Niet verbonden',
+                deviceAdded: 'Apparaat toegevoegd!',
+                deviceExists: 'Dit apparaat is al toegevoegd.',
+                unknownDevice: 'Onbekende apparaatcode. Controleer de code en probeer opnieuw.',
+                codeFound: 'Code gevonden: ',
+                scanCancelled: 'Scan geannuleerd of mislukt',
+                selectDevice: 'Selecteer je apparaat...',
+                connectingTo: 'Verbinden met ',
+                cameraDenied: 'Camera niet beschikbaar. Geef toestemming.',
+                bleNotAvailable: 'Bluetooth niet beschikbaar'
             }
         };
 
+        // ===== APP STATE =====
         let currentLang = localStorage.getItem('language') || 'en';
-        let connectedDevice = null;
+        let myDevices = JSON.parse(localStorage.getItem('myDevices') || '[]');
+        let connectedDevice = null;       // BLE device object
+        let bleCharacteristic = null;
         let isConnected = false;
-        let currentPattern = null;
-        let foundDevices = [];
+        let activeDeviceCode = null;       // Which device is open in control overlay
+        let currentActiveMode = null;
+        let qrScanning = false;
+        let qrStream = null;
+        let qrAnimFrame = null;
 
-        // Initialize
+        // ===== INIT =====
         function init() {
-            setupLanguage();
+            updateTranslations();
             setupEventListeners();
+            renderMyDevices();
             registerServiceWorker();
             hideSplashAfterDelay();
             loadSettings();
+            checkBleSupport();
         }
 
         function hideSplashAfterDelay() {
@@ -1282,187 +1260,339 @@
             }, 2500);
         }
 
-        function setupLanguage() {
-            updateTranslations();
-            document.getElementById('langToggle').addEventListener('click', toggleLanguage);
-        }
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'nl' : 'en';
-            localStorage.setItem('language', currentLang);
-            updateTranslations();
-        }
-
+        // ===== TRANSLATIONS =====
         function updateTranslations() {
-            const trans = translations[currentLang];
-            document.getElementById('splashTagline').textContent = trans.splashTagline;
-            document.getElementById('statusText').textContent = trans.statusDisconnected;
-            document.getElementById('powerLabel').textContent = trans.powerLabel;
-            document.getElementById('speedLabel').textContent = trans.speedLabel;
-            document.getElementById('intensityLabel').textContent = trans.intensityLabel;
-            document.getElementById('connectBtn').textContent = trans.connectBtn;
-            document.getElementById('stopBtn').textContent = trans.stopBtn;
-            document.getElementById('devicesTitle').textContent = trans.devicesTitle;
-            document.getElementById('scanBtn').textContent = trans.scanBtn;
-            document.getElementById('tabQR').textContent = trans.tabQR;
-            document.getElementById('tabCode').textContent = trans.tabCode;
-            document.getElementById('tabBLE').textContent = trans.tabBLE;
-            document.getElementById('qrStatus').textContent = trans.qrStatus;
-            document.getElementById('startQrBtn').textContent = trans.startQrBtn;
-            document.getElementById('codeHint').textContent = trans.codeHint;
-            document.getElementById('codeSubmitBtn').textContent = trans.codeSubmitBtn;
-            document.getElementById('codeInfo').textContent = trans.codeInfo;
-            document.getElementById('bleUnsupportedText').textContent = trans.bleUnsupportedText;
-            document.getElementById('partnerTitle').textContent = trans.partnerTitle;
-            document.getElementById('controlsTitle').textContent = trans.controlsTitle;
-            document.getElementById('remoteLabel').textContent = trans.remoteLabel;
-            document.getElementById('syncLabel').textContent = trans.syncLabel;
-            document.getElementById('hapticLabel').textContent = trans.hapticLabel;
-            document.getElementById('hapticDesc').textContent = trans.hapticDesc;
-            document.getElementById('bgConnLabel').textContent = trans.bgConnLabel;
-            document.getElementById('bgConnDesc').textContent = trans.bgConnDesc;
-            document.getElementById('privacyLabel').textContent = trans.privacyLabel;
-            document.getElementById('privacyDesc').textContent = trans.privacyDesc;
-            document.getElementById('autoConnectLabel').textContent = trans.autoConnectLabel;
-            document.getElementById('autoConnectDesc').textContent = trans.autoConnectDesc;
-            document.getElementById('versionText').textContent = trans.versionText;
-            document.getElementById('builtText').textContent = trans.builtText;
-            document.getElementById('navHomeLabel').textContent = trans.navHomeLabel;
-            document.getElementById('navDevicesLabel').textContent = trans.navDevicesLabel;
-            document.getElementById('navPartnerLabel').textContent = trans.navPartnerLabel;
-            document.getElementById('navSettingsLabel').textContent = trans.navSettingsLabel;
-            document.getElementById('copyLinkBtn').textContent = trans.copyBtnText;
+            const t = translations[currentLang];
+            document.getElementById('splashTagline').textContent = t.splashTagline;
+            document.getElementById('myDevicesTitle').textContent = t.myDevicesTitle;
+            document.getElementById('myDevicesSubtitle').textContent = t.myDevicesSubtitle;
+            document.getElementById('addDeviceLabel').textContent = t.addDeviceLabel;
+            document.getElementById('devicesTitle').textContent = t.devicesTitle;
+            document.getElementById('tabQR').textContent = t.tabQR;
+            document.getElementById('tabCode').textContent = t.tabCode;
+            document.getElementById('tabBLE').textContent = t.tabBLE;
+            document.getElementById('qrStatus').textContent = t.qrStatus;
+            document.getElementById('startQrBtn').textContent = t.startQrBtn;
+            document.getElementById('codeHint').textContent = t.codeHint;
+            document.getElementById('codeSubmitBtn').textContent = t.codeSubmitBtn;
+            document.getElementById('codeInfo').textContent = t.codeInfo;
+            document.getElementById('bleUnsupportedText').textContent = t.bleUnsupportedText;
+            document.getElementById('scanBtn').textContent = t.scanBtn;
+            document.getElementById('partnerTitle').textContent = t.partnerTitle;
+            document.getElementById('controlsTitle').textContent = t.controlsTitle;
+            document.getElementById('remoteLabel').textContent = t.remoteLabel;
+            document.getElementById('syncLabel').textContent = t.syncLabel;
+            document.getElementById('hapticLabel').textContent = t.hapticLabel;
+            document.getElementById('hapticDesc').textContent = t.hapticDesc;
+            document.getElementById('bgConnLabel').textContent = t.bgConnLabel;
+            document.getElementById('bgConnDesc').textContent = t.bgConnDesc;
+            document.getElementById('privacyLabel').textContent = t.privacyLabel;
+            document.getElementById('privacyDesc').textContent = t.privacyDesc;
+            document.getElementById('autoConnectLabel').textContent = t.autoConnectLabel;
+            document.getElementById('autoConnectDesc').textContent = t.autoConnectDesc;
+            document.getElementById('versionText').textContent = t.versionText;
+            document.getElementById('builtText').textContent = t.builtText;
+            document.getElementById('navHomeLabel').textContent = t.navHomeLabel;
+            document.getElementById('navDevicesLabel').textContent = t.navDevicesLabel;
+            document.getElementById('navPartnerLabel').textContent = t.navPartnerLabel;
+            document.getElementById('navSettingsLabel').textContent = t.navSettingsLabel;
+            document.getElementById('copyLinkBtn').textContent = t.copyBtnText;
+            document.getElementById('connectPromptText').textContent = t.connectPromptText;
+            document.getElementById('controlConnectBtn').textContent = t.controlConnectBtn;
+            document.getElementById('modesTitle').textContent = t.modesTitle;
+            document.getElementById('controlStopBtn').textContent = t.stopBtn;
+            document.getElementById('controlDisconnectBtn').textContent = t.disconnectBtn;
+
+            // Update status based on current state
+            if (isConnected) {
+                document.getElementById('statusText').textContent = t.statusConnected;
+            } else {
+                document.getElementById('statusText').textContent = t.statusDisconnected;
+            }
+
+            // Re-render devices to update language
+            renderMyDevices();
+
+            // Update control overlay if open
+            if (activeDeviceCode) {
+                updateControlOverlayLanguage();
+            }
         }
 
+        // ===== EVENT LISTENERS =====
         function setupEventListeners() {
+            // Language toggle
+            document.getElementById('langToggle').addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'nl' : 'en';
+                localStorage.setItem('language', currentLang);
+                updateTranslations();
+            });
+
             // Navigation
             document.querySelectorAll('.nav-item').forEach(item => {
                 item.addEventListener('click', () => navigateTo(item.dataset.screen));
             });
 
-            // Control sliders
-            document.getElementById('powerSlider').addEventListener('input', handlePowerChange);
-            document.getElementById('speedSlider').addEventListener('input', handleSpeedChange);
-
-            // Pattern buttons
-            document.querySelectorAll('.pattern-btn').forEach(btn => {
-                btn.addEventListener('click', () => selectPattern(btn));
-            });
-
-            // Connection
-            document.getElementById('connectBtn').addEventListener('click', connectDevice);
-            document.getElementById('stopBtn').addEventListener('click', stopDevice);
-            document.getElementById('scanBtn').addEventListener('click', startScan);
-            document.getElementById('startQrBtn').addEventListener('click', toggleQrScanner);
-            document.getElementById('codeSubmitBtn').addEventListener('click', submitCode);
+            // Add device button on home screen
+            document.getElementById('addDeviceBtn').addEventListener('click', () => navigateTo('devices'));
 
             // Connection tabs
             document.querySelectorAll('.connect-tab').forEach(tab => {
                 tab.addEventListener('click', () => switchConnectTab(tab));
             });
 
-            // Code digit inputs
-            setupCodeInputs();
+            // QR scanner
+            document.getElementById('startQrBtn').addEventListener('click', toggleQrScanner);
 
-            // Check BLE support on devices tab
-            checkBleSupport();
+            // Code input
+            setupCodeInputs();
+            document.getElementById('codeSubmitBtn').addEventListener('click', submitCode);
+
+            // BLE scan
+            document.getElementById('scanBtn').addEventListener('click', startBleScan);
 
             // Partner
             document.getElementById('copyLinkBtn').addEventListener('click', copyShareLink);
 
-            // Settings
-            document.getElementById('hapticToggle').addEventListener('change', (e) => {
-                localStorage.setItem('haptic', e.target.checked);
+            // Settings toggles
+            ['hapticToggle', 'bgConnToggle', 'privacyToggle', 'autoConnectToggle'].forEach(id => {
+                document.getElementById(id).addEventListener('change', (e) => {
+                    localStorage.setItem(id.replace('Toggle', ''), e.target.checked);
+                });
             });
-            document.getElementById('bgConnToggle').addEventListener('change', (e) => {
-                localStorage.setItem('bgConn', e.target.checked);
-            });
-            document.getElementById('privacyToggle').addEventListener('change', (e) => {
-                localStorage.setItem('privacy', e.target.checked);
-            });
-            document.getElementById('autoConnectToggle').addEventListener('change', (e) => {
-                localStorage.setItem('autoConnect', e.target.checked);
-            });
+
+            // Control overlay
+            document.getElementById('controlBackBtn').addEventListener('click', closeControlOverlay);
+            document.getElementById('controlConnectBtn').addEventListener('click', connectActiveDevice);
+            document.getElementById('controlStopBtn').addEventListener('click', stopDevice);
+            document.getElementById('controlDisconnectBtn').addEventListener('click', disconnectDevice);
         }
 
+        // ===== NAVIGATION =====
         function navigateTo(screen) {
-            // Stop QR scanner when leaving devices
             if (qrScanning) stopQrScanner();
-
-            // Hide all screens
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-            // Show selected screen
             document.getElementById(screen + 'Screen').classList.add('active');
-
-            // Update nav items
-            document.querySelectorAll('.nav-item').forEach(item => {
-                item.classList.remove('active');
-            });
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
             document.getElementById('nav' + screen.charAt(0).toUpperCase() + screen.slice(1)).classList.add('active');
         }
 
-        function handlePowerChange(e) {
-            const value = parseInt(e.target.value);
-            document.getElementById('powerValue').textContent = value;
-            updateIntensityRing(value);
-            if (isConnected) {
-                sendVibrationCommand(value);
-            }
-        }
+        // ===== MY DEVICES RENDERING =====
+        function renderMyDevices() {
+            const container = document.getElementById('myDevicesList');
+            const t = translations[currentLang];
 
-        function handleSpeedChange(e) {
-            const value = parseInt(e.target.value);
-            document.getElementById('speedValue').textContent = value;
-        }
-
-        function updateIntensityRing(intensity) {
-            const angle = (intensity / 20) * 360;
-            document.querySelector('.intensity-circle').style.setProperty('--intensity-angle', angle + 'deg');
-            document.getElementById('intensityValue').textContent = intensity;
-        }
-
-        function selectPattern(btn) {
-            // Remove active from all
-            document.querySelectorAll('.pattern-btn').forEach(b => b.classList.remove('active'));
-            // Add active to clicked
-            btn.classList.add('active');
-            currentPattern = btn.dataset.pattern;
-
-            if (isConnected) {
-                sendPatternCommand(currentPattern);
-            }
-        }
-
-        let qrScanning = false;
-        let qrStream = null;
-        let qrAnimFrame = null;
-        let bleCharacteristic = null;
-
-        async function connectDevice() {
-            if (!navigator.bluetooth) {
-                // No BLE: redirect user to Devices tab
-                const trans = translations[currentLang];
-                const hint = document.getElementById('homeConnectHint');
-                hint.textContent = trans.homeConnectHint;
-                hint.style.display = 'block';
-                navigateTo('devices');
+            if (myDevices.length === 0) {
+                container.innerHTML = `
+                    <div class="no-devices-msg">
+                        <div class="no-device-icon">📱</div>
+                        <h3>${t.noDevicesTitle}</h3>
+                        <p>${t.noDevicesText}</p>
+                    </div>
+                `;
                 return;
             }
 
+            container.innerHTML = myDevices.map(code => {
+                const reg = DEVICE_REGISTRY[code];
+                if (!reg) return '';
+                const isActive = isConnected && activeDeviceCode === code;
+                const statusClass = isActive ? 'status-connected' : 'status-ready';
+                const statusText = isActive ? t.deviceStatusConnected : t.deviceStatusReady;
+                const cardClass = isActive ? 'device-card connected-card' : 'device-card';
+
+                return `
+                    <div class="${cardClass}" data-code="${code}" onclick="openDevice('${code}')">
+                        <button class="btn-remove-device" onclick="event.stopPropagation(); removeDevice('${code}')" title="Remove">&times;</button>
+                        <img class="device-card-img" src="${reg.image}" alt="${reg.name[currentLang]}" loading="lazy">
+                        <div class="device-card-info">
+                            <h3>${reg.name[currentLang]}</h3>
+                            <p>${reg.type[currentLang]}</p>
+                        </div>
+                        <span class="device-card-status ${statusClass}">${statusText}</span>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function addDevice(code) {
+            const t = translations[currentLang];
+            if (!DEVICE_REGISTRY[code]) {
+                showToast(t.unknownDevice);
+                return false;
+            }
+            if (myDevices.includes(code)) {
+                showToast(t.deviceExists);
+                return false;
+            }
+            myDevices.push(code);
+            localStorage.setItem('myDevices', JSON.stringify(myDevices));
+            renderMyDevices();
+            showToast(t.deviceAdded);
+            // Switch to home to show the new device
+            navigateTo('home');
+            return true;
+        }
+
+        function removeDevice(code) {
+            if (activeDeviceCode === code && isConnected) {
+                disconnectDevice();
+            }
+            myDevices = myDevices.filter(c => c !== code);
+            localStorage.setItem('myDevices', JSON.stringify(myDevices));
+            renderMyDevices();
+        }
+
+        // ===== DEVICE CONTROL OVERLAY =====
+        function openDevice(code) {
+            activeDeviceCode = code;
+            const reg = DEVICE_REGISTRY[code];
+            if (!reg) return;
+
+            const overlay = document.getElementById('deviceControlOverlay');
+            overlay.classList.add('active');
+
+            document.getElementById('controlDeviceName').textContent = reg.name[currentLang];
+            document.getElementById('controlDeviceImg').src = reg.image;
+
+            updateControlOverlayState();
+            renderModes(reg);
+        }
+
+        function updateControlOverlayLanguage() {
+            const reg = DEVICE_REGISTRY[activeDeviceCode];
+            if (!reg) return;
+            const t = translations[currentLang];
+            document.getElementById('controlDeviceName').textContent = reg.name[currentLang];
+            document.getElementById('connectPromptText').textContent = t.connectPromptText;
+            document.getElementById('controlConnectBtn').textContent = t.controlConnectBtn;
+            document.getElementById('modesTitle').textContent = t.modesTitle;
+            document.getElementById('controlStopBtn').textContent = t.stopBtn;
+            document.getElementById('controlDisconnectBtn').textContent = t.disconnectBtn;
+            renderModes(reg);
+            updateControlOverlayState();
+        }
+
+        function updateControlOverlayState() {
+            const t = translations[currentLang];
+            const connected = isConnected && connectedDevice;
+            const promptEl = document.getElementById('connectPrompt');
+            const modesEl = document.getElementById('modesSection');
+            const stopEl = document.getElementById('stopSection');
+            const statusEl = document.getElementById('controlDeviceStatus');
+            const hintEl = document.getElementById('controlBleHint');
+
+            if (connected) {
+                promptEl.style.display = 'none';
+                modesEl.style.display = 'block';
+                stopEl.style.display = 'block';
+                statusEl.textContent = t.deviceStatusConnected;
+                statusEl.style.color = '#2e7d32';
+            } else {
+                promptEl.style.display = 'block';
+                modesEl.style.display = 'none';
+                stopEl.style.display = 'none';
+                statusEl.textContent = t.controlNotConnected;
+                statusEl.style.color = '';
+
+                // Show BLE hint if not supported
+                if (!navigator.bluetooth) {
+                    hintEl.textContent = t.controlBleHint;
+                    hintEl.style.display = 'block';
+                } else {
+                    hintEl.style.display = 'none';
+                }
+            }
+        }
+
+        function renderModes(deviceReg) {
+            const grid = document.getElementById('modesGrid');
+            const numModes = deviceReg.modes || 9;
+            const isDeviceConnected = isConnected && connectedDevice;
+
+            grid.innerHTML = MODE_DEFS.slice(0, numModes).map(mode => {
+                const label = mode[currentLang];
+                const activeClass = currentActiveMode === mode.id ? 'active' : '';
+                const disabledClass = !isDeviceConnected ? 'disabled' : '';
+                return `
+                    <button class="mode-btn ${activeClass} ${disabledClass}" data-mode-id="${mode.id}" data-cmd="${mode.cmd}" onclick="selectMode('${mode.id}', ${mode.cmd})">
+                        <div class="mode-icon">${mode.icon}</div>
+                        <span class="mode-label">${label}</span>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function closeControlOverlay() {
+            document.getElementById('deviceControlOverlay').classList.remove('active');
+            currentActiveMode = null;
+            renderMyDevices();
+        }
+
+        async function selectMode(modeId, cmd) {
+            if (!isConnected || !connectedDevice) return;
+
+            // Toggle: if same mode is tapped, deactivate
+            if (currentActiveMode === modeId) {
+                currentActiveMode = null;
+                await sendCommand(0x00, 0x00); // stop
+                renderModes(DEVICE_REGISTRY[activeDeviceCode]);
+                return;
+            }
+
+            currentActiveMode = modeId;
+            renderModes(DEVICE_REGISTRY[activeDeviceCode]);
+
+            // Send BLE command: [modeCommand, intensity=10 as default]
+            await sendCommand(cmd, 10);
+
+            // Haptic feedback
+            if (document.getElementById('hapticToggle').checked && navigator.vibrate) {
+                navigator.vibrate(50);
+            }
+        }
+
+        // ===== BLUETOOTH =====
+        function checkBleSupport() {
+            if (!navigator.bluetooth) {
+                document.getElementById('bleSupported').style.display = 'none';
+                document.getElementById('bleUnsupported').style.display = 'block';
+            }
+        }
+
+        async function connectActiveDevice() {
+            if (!navigator.bluetooth) {
+                const t = translations[currentLang];
+                showToast(t.bleNotAvailable);
+                return;
+            }
+
+            const reg = DEVICE_REGISTRY[activeDeviceCode];
+            if (!reg) return;
+
             try {
                 updateStatus('scanning');
+                const filters = [];
+                reg.bleNamePrefixes.forEach(prefix => {
+                    filters.push({ namePrefix: prefix });
+                });
+                filters.push({ services: ['0000fff0-0000-1000-8000-00805f9b34fb'] });
+                filters.push({ services: ['0000ffe0-0000-1000-8000-00805f9b34fb'] });
+
                 const device = await navigator.bluetooth.requestDevice({
-                    filters: [
-                        { services: ['0000fff0-0000-1000-8000-00805f9b34fb'] },
-                        { services: ['0000ffe0-0000-1000-8000-00805f9b34fb'] }
-                    ],
-                    optionalServices: ['generic_access']
+                    filters: filters,
+                    optionalServices: [
+                        '0000fff0-0000-1000-8000-00805f9b34fb',
+                        '0000ffe0-0000-1000-8000-00805f9b34fb',
+                        'generic_access'
+                    ]
                 });
 
                 await connectToGattDevice(device);
             } catch (error) {
                 console.error('Connection error:', error);
                 updateStatus('disconnected');
+                updateControlOverlayState();
             }
         }
 
@@ -1480,255 +1610,41 @@
                 connectedDevice = device;
                 isConnected = true;
                 updateStatus('connected');
-                document.getElementById('connectBtn').style.display = 'none';
-                document.getElementById('stopBtn').style.display = 'block';
-                document.getElementById('homeConnectHint').style.display = 'none';
                 localStorage.setItem('lastDevice', device.id);
 
-                // Switch to home screen
-                navigateTo('home');
+                // Update control overlay
+                updateControlOverlayState();
+                if (activeDeviceCode) {
+                    renderModes(DEVICE_REGISTRY[activeDeviceCode]);
+                }
+                renderMyDevices();
+
+                // Listen for disconnection
+                device.addEventListener('gattserverdisconnected', () => {
+                    isConnected = false;
+                    connectedDevice = null;
+                    bleCharacteristic = null;
+                    currentActiveMode = null;
+                    updateStatus('disconnected');
+                    updateControlOverlayState();
+                    if (activeDeviceCode) renderModes(DEVICE_REGISTRY[activeDeviceCode]);
+                    renderMyDevices();
+                });
+
             } catch (error) {
                 console.error('GATT connection error:', error);
                 updateStatus('disconnected');
+                updateControlOverlayState();
             }
         }
 
-        function checkBleSupport() {
-            if (!navigator.bluetooth) {
-                document.getElementById('bleSupported').style.display = 'none';
-                document.getElementById('bleUnsupported').style.display = 'block';
-                // Show hint on home screen
-                const trans = translations[currentLang];
-                const hint = document.getElementById('homeConnectHint');
-                hint.textContent = trans.homeConnectHint;
-                hint.style.display = 'block';
-            }
-        }
-
-        // Tab switching
-        function switchConnectTab(tab) {
-            document.querySelectorAll('.connect-tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.connect-panel').forEach(p => p.classList.remove('active'));
-            tab.classList.add('active');
-            document.getElementById(tab.dataset.panel).classList.add('active');
-
-            // Stop QR scanner when switching away
-            if (tab.dataset.panel !== 'qrPanel' && qrScanning) {
-                stopQrScanner();
-            }
-        }
-
-        // QR Code Scanner
-        async function toggleQrScanner() {
-            if (qrScanning) {
-                stopQrScanner();
-            } else {
-                await startQrScanner();
-            }
-        }
-
-        async function startQrScanner() {
-            const video = document.getElementById('qrVideo');
-            const statusEl = document.getElementById('qrStatus');
-            const btn = document.getElementById('startQrBtn');
-
+        async function sendCommand(cmd, value) {
+            if (!connectedDevice || !isConnected) return;
             try {
-                qrStream = await navigator.mediaDevices.getUserMedia({
-                    video: { facingMode: 'environment' }
-                });
-                video.srcObject = qrStream;
-                await video.play();
-                qrScanning = true;
-                statusEl.textContent = currentLang === 'nl' ? 'Scannen...' : 'Scanning...';
-                btn.textContent = currentLang === 'nl' ? 'Stop Camera' : 'Stop Camera';
-                btn.classList.remove('btn-connect');
-                btn.classList.add('btn-stop');
-                scanQrFrame();
+                const char = await getCharacteristic();
+                if (char) await char.writeValue(new Uint8Array([cmd, value]));
             } catch (error) {
-                console.error('Camera error:', error);
-                statusEl.textContent = currentLang === 'nl'
-                    ? 'Camera niet beschikbaar. Geef toestemming.'
-                    : 'Camera not available. Please grant permission.';
-            }
-        }
-
-        function scanQrFrame() {
-            if (!qrScanning) return;
-            const video = document.getElementById('qrVideo');
-            const canvas = document.getElementById('qrCanvas');
-            const ctx = canvas.getContext('2d');
-
-            if (video.readyState === video.HAVE_ENOUGH_DATA) {
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-                if (typeof jsQR !== 'undefined') {
-                    const code = jsQR(imageData.data, imageData.width, imageData.height, {
-                        inversionAttempts: 'dontInvert'
-                    });
-                    if (code && code.data) {
-                        handleQrResult(code.data);
-                        return;
-                    }
-                }
-            }
-            qrAnimFrame = requestAnimationFrame(scanQrFrame);
-        }
-
-        function stopQrScanner() {
-            qrScanning = false;
-            if (qrAnimFrame) cancelAnimationFrame(qrAnimFrame);
-            if (qrStream) {
-                qrStream.getTracks().forEach(t => t.stop());
-                qrStream = null;
-            }
-            const video = document.getElementById('qrVideo');
-            video.srcObject = null;
-            const statusEl = document.getElementById('qrStatus');
-            const btn = document.getElementById('startQrBtn');
-            const trans = translations[currentLang];
-            statusEl.textContent = trans.qrStatus;
-            btn.textContent = trans.startQrBtn;
-            btn.classList.remove('btn-stop');
-            btn.classList.add('btn-connect');
-        }
-
-        function handleQrResult(data) {
-            stopQrScanner();
-            const statusEl = document.getElementById('qrStatus');
-
-            // Try to extract device info from QR
-            // Expected formats: "MYFANTASY:1234" or just a 4-digit code or a BLE address
-            let deviceCode = null;
-            if (data.match(/^MYFANTASY:(\d{4})$/i)) {
-                deviceCode = data.match(/^MYFANTASY:(\d{4})$/i)[1];
-            } else if (data.match(/^\d{4}$/)) {
-                deviceCode = data;
-            } else if (data.includes('myfantasy') || data.includes('lovespouse')) {
-                // URL or other format - try to extract code
-                const m = data.match(/(\d{4})/);
-                if (m) deviceCode = m[1];
-            }
-
-            if (deviceCode) {
-                statusEl.textContent = (currentLang === 'nl' ? 'Code gevonden: ' : 'Code found: ') + deviceCode;
-                connectWithCode(deviceCode);
-            } else {
-                statusEl.textContent = currentLang === 'nl'
-                    ? 'QR code herkend, probeer verbinding...'
-                    : 'QR code recognized, trying to connect...';
-                // Try direct BLE connect if data looks like a MAC address or device name
-                tryConnectByName(data);
-            }
-        }
-
-        // Code Input Logic
-        function setupCodeInputs() {
-            const inputs = [
-                document.getElementById('code1'),
-                document.getElementById('code2'),
-                document.getElementById('code3'),
-                document.getElementById('code4')
-            ];
-
-            inputs.forEach((input, idx) => {
-                input.addEventListener('input', (e) => {
-                    const val = e.target.value.replace(/[^0-9]/g, '');
-                    e.target.value = val;
-                    if (val && idx < 3) inputs[idx + 1].focus();
-                    updateCodeSubmitBtn();
-                });
-
-                input.addEventListener('keydown', (e) => {
-                    if (e.key === 'Backspace' && !e.target.value && idx > 0) {
-                        inputs[idx - 1].focus();
-                    }
-                });
-
-                input.addEventListener('paste', (e) => {
-                    e.preventDefault();
-                    const paste = (e.clipboardData || window.clipboardData).getData('text').replace(/[^0-9]/g, '');
-                    for (let i = 0; i < 4 && i < paste.length; i++) {
-                        inputs[i].value = paste[i];
-                    }
-                    if (paste.length >= 4) inputs[3].focus();
-                    updateCodeSubmitBtn();
-                });
-            });
-        }
-
-        function updateCodeSubmitBtn() {
-            const code = getEnteredCode();
-            document.getElementById('codeSubmitBtn').disabled = code.length !== 4;
-        }
-
-        function getEnteredCode() {
-            return ['code1','code2','code3','code4'].map(id => document.getElementById(id).value).join('');
-        }
-
-        function submitCode() {
-            const code = getEnteredCode();
-            if (code.length === 4) {
-                connectWithCode(code);
-            }
-        }
-
-        async function connectWithCode(code) {
-            updateStatus('scanning');
-
-            // If BLE is available, use the code to filter/find the device
-            if (navigator.bluetooth) {
-                try {
-                    // Try to find a device advertising with this code in its name
-                    const device = await navigator.bluetooth.requestDevice({
-                        filters: [
-                            { namePrefix: 'MF' },
-                            { namePrefix: 'LVS' },
-                            { namePrefix: 'Love' },
-                            { services: ['0000fff0-0000-1000-8000-00805f9b34fb'] },
-                            { services: ['0000ffe0-0000-1000-8000-00805f9b34fb'] }
-                        ],
-                        optionalServices: [
-                            '0000fff0-0000-1000-8000-00805f9b34fb',
-                            '0000ffe0-0000-1000-8000-00805f9b34fb',
-                            'generic_access'
-                        ]
-                    });
-                    await connectToGattDevice(device);
-                    return;
-                } catch (error) {
-                    console.error('BLE code connect error:', error);
-                }
-            }
-
-            // Fallback: store the code for later use (e.g., via cloud relay)
-            localStorage.setItem('deviceCode', code);
-            updateStatus('disconnected');
-            const msg = currentLang === 'nl'
-                ? 'Code ' + code + ' opgeslagen. Bluetooth is nodig voor directe verbinding. Probeer op een apparaat met Bluetooth-ondersteuning.'
-                : 'Code ' + code + ' saved. Bluetooth is required for direct connection. Try on a device with Bluetooth support.';
-            alert(msg);
-        }
-
-        async function tryConnectByName(name) {
-            if (!navigator.bluetooth) {
-                updateStatus('disconnected');
-                return;
-            }
-            try {
-                const device = await navigator.bluetooth.requestDevice({
-                    filters: [{ name: name }],
-                    optionalServices: [
-                        '0000fff0-0000-1000-8000-00805f9b34fb',
-                        '0000ffe0-0000-1000-8000-00805f9b34fb'
-                    ]
-                });
-                await connectToGattDevice(device);
-            } catch (error) {
-                console.error('Connect by name error:', error);
-                updateStatus('disconnected');
+                console.error('Write error:', error);
             }
         }
 
@@ -1751,44 +1667,10 @@
             }
         }
 
-        async function sendVibrationCommand(intensity) {
-            if (!connectedDevice || !isConnected) return;
-            try {
-                const char = await getCharacteristic();
-                if (char) await char.writeValue(new Uint8Array([0x03, intensity]));
-            } catch (error) {
-                console.error('Write error:', error);
-            }
-        }
-
-        async function sendPatternCommand(pattern) {
-            if (!connectedDevice || !isConnected) return;
-
-            const patternCommands = {
-                pulse: 0x01, wave: 0x02, escalate: 0x04, rhythm: 0x05,
-                knock: 0x06, vibrate: 0x07, burst: 0x08, custom: 0x09
-            };
-
-            try {
-                const char = await getCharacteristic();
-                if (!char) return;
-                const intensity = parseInt(document.getElementById('powerSlider').value);
-                await char.writeValue(new Uint8Array([patternCommands[pattern] || 0x01, intensity]));
-            } catch (error) {
-                console.error('Pattern error:', error);
-            }
-        }
-
         async function stopDevice() {
-            if (!connectedDevice) return;
-            try {
-                const char = await getCharacteristic();
-                if (char) await char.writeValue(new Uint8Array([0x00, 0x00]));
-                disconnectDevice();
-            } catch (error) {
-                console.error('Stop error:', error);
-                disconnectDevice();
-            }
+            currentActiveMode = null;
+            await sendCommand(0x00, 0x00);
+            if (activeDeviceCode) renderModes(DEVICE_REGISTRY[activeDeviceCode]);
         }
 
         function disconnectDevice() {
@@ -1798,26 +1680,24 @@
             isConnected = false;
             connectedDevice = null;
             bleCharacteristic = null;
+            currentActiveMode = null;
             updateStatus('disconnected');
-            document.getElementById('connectBtn').style.display = 'block';
-            document.getElementById('stopBtn').style.display = 'none';
-            document.getElementById('powerSlider').value = 0;
-            updateIntensityRing(0);
+            updateControlOverlayState();
+            if (activeDeviceCode) renderModes(DEVICE_REGISTRY[activeDeviceCode]);
+            renderMyDevices();
         }
 
-        async function startScan() {
+        async function startBleScan() {
             if (!navigator.bluetooth) {
-                alert(currentLang === 'nl' ? 'Bluetooth niet beschikbaar' : 'Bluetooth not supported');
+                showToast(translations[currentLang].bleNotAvailable);
                 return;
             }
-
             try {
                 updateStatus('scanning');
                 const statusEl = document.getElementById('scanStatus');
-                statusEl.textContent = currentLang === 'nl' ? 'Selecteer je apparaat...' : 'Select your device...';
+                statusEl.textContent = translations[currentLang].selectDevice;
                 statusEl.style.display = 'block';
 
-                // Real BLE device selection via browser prompt
                 const device = await navigator.bluetooth.requestDevice({
                     filters: [
                         { namePrefix: 'MF' },
@@ -1833,45 +1713,184 @@
                     ]
                 });
 
-                statusEl.textContent = (currentLang === 'nl' ? 'Verbinden met ' : 'Connecting to ') + (device.name || 'device') + '...';
+                statusEl.textContent = translations[currentLang].connectingTo + (device.name || 'device') + '...';
                 await connectToGattDevice(device);
                 statusEl.style.display = 'none';
+
+                // If we connected via BLE scan, try to match a known device and add it
+                // For now, add as generic or navigate home
+                navigateTo('home');
             } catch (error) {
                 console.error('Scan error:', error);
-                const statusEl = document.getElementById('scanStatus');
-                statusEl.textContent = currentLang === 'nl' ? 'Scan geannuleerd of mislukt' : 'Scan cancelled or failed';
+                document.getElementById('scanStatus').textContent = translations[currentLang].scanCancelled;
                 updateStatus('disconnected');
             }
         }
 
+        // ===== QR SCANNER =====
+        async function toggleQrScanner() {
+            if (qrScanning) { stopQrScanner(); } else { await startQrScanner(); }
+        }
+
+        async function startQrScanner() {
+            const video = document.getElementById('qrVideo');
+            const statusEl = document.getElementById('qrStatus');
+            const btn = document.getElementById('startQrBtn');
+            const t = translations[currentLang];
+
+            try {
+                qrStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+                video.srcObject = qrStream;
+                await video.play();
+                qrScanning = true;
+                statusEl.textContent = t.statusScanning;
+                btn.textContent = t.stopCameraBtn;
+                btn.classList.remove('btn-connect');
+                btn.classList.add('btn-stop');
+                scanQrFrame();
+            } catch (error) {
+                console.error('Camera error:', error);
+                statusEl.textContent = t.cameraDenied;
+            }
+        }
+
+        function scanQrFrame() {
+            if (!qrScanning) return;
+            const video = document.getElementById('qrVideo');
+            const canvas = document.getElementById('qrCanvas');
+            const ctx = canvas.getContext('2d');
+
+            if (video.readyState === video.HAVE_ENOUGH_DATA) {
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+                if (typeof jsQR !== 'undefined') {
+                    const code = jsQR(imageData.data, imageData.width, imageData.height, { inversionAttempts: 'dontInvert' });
+                    if (code && code.data) {
+                        handleQrResult(code.data);
+                        return;
+                    }
+                }
+            }
+            qrAnimFrame = requestAnimationFrame(scanQrFrame);
+        }
+
+        function stopQrScanner() {
+            qrScanning = false;
+            if (qrAnimFrame) cancelAnimationFrame(qrAnimFrame);
+            if (qrStream) { qrStream.getTracks().forEach(t => t.stop()); qrStream = null; }
+            document.getElementById('qrVideo').srcObject = null;
+            const t = translations[currentLang];
+            document.getElementById('qrStatus').textContent = t.qrStatus;
+            const btn = document.getElementById('startQrBtn');
+            btn.textContent = t.startQrBtn;
+            btn.classList.remove('btn-stop');
+            btn.classList.add('btn-connect');
+        }
+
+        function handleQrResult(data) {
+            stopQrScanner();
+            const statusEl = document.getElementById('qrStatus');
+            const t = translations[currentLang];
+
+            let deviceCode = null;
+            if (data.match(/^MYFANTASY:(\d{4})$/i)) {
+                deviceCode = data.match(/^MYFANTASY:(\d{4})$/i)[1];
+            } else if (data.match(/^\d{4}$/)) {
+                deviceCode = data;
+            } else if (data.includes('myfantasy') || data.includes('lovespouse')) {
+                const m = data.match(/(\d{4})/);
+                if (m) deviceCode = m[1];
+            }
+
+            if (deviceCode) {
+                statusEl.textContent = t.codeFound + deviceCode;
+                addDevice(deviceCode);
+            } else {
+                statusEl.textContent = t.unknownDevice;
+            }
+        }
+
+        // ===== CODE INPUT =====
+        function setupCodeInputs() {
+            const inputs = [
+                document.getElementById('code1'),
+                document.getElementById('code2'),
+                document.getElementById('code3'),
+                document.getElementById('code4')
+            ];
+
+            inputs.forEach((input, idx) => {
+                input.addEventListener('input', (e) => {
+                    const val = e.target.value.replace(/[^0-9]/g, '');
+                    e.target.value = val;
+                    if (val && idx < 3) inputs[idx + 1].focus();
+                    updateCodeSubmitBtn();
+                });
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && !e.target.value && idx > 0) inputs[idx - 1].focus();
+                });
+                input.addEventListener('paste', (e) => {
+                    e.preventDefault();
+                    const paste = (e.clipboardData || window.clipboardData).getData('text').replace(/[^0-9]/g, '');
+                    for (let i = 0; i < 4 && i < paste.length; i++) inputs[i].value = paste[i];
+                    if (paste.length >= 4) inputs[3].focus();
+                    updateCodeSubmitBtn();
+                });
+            });
+        }
+
+        function updateCodeSubmitBtn() {
+            document.getElementById('codeSubmitBtn').disabled = getEnteredCode().length !== 4;
+        }
+
+        function getEnteredCode() {
+            return ['code1','code2','code3','code4'].map(id => document.getElementById(id).value).join('');
+        }
+
+        function submitCode() {
+            const code = getEnteredCode();
+            if (code.length === 4) {
+                addDevice(code);
+                // Clear inputs
+                ['code1','code2','code3','code4'].forEach(id => document.getElementById(id).value = '');
+                updateCodeSubmitBtn();
+            }
+        }
+
+        // ===== TAB SWITCHING =====
+        function switchConnectTab(tab) {
+            document.querySelectorAll('.connect-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.connect-panel').forEach(p => p.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.panel).classList.add('active');
+            if (tab.dataset.panel !== 'qrPanel' && qrScanning) stopQrScanner();
+        }
+
+        // ===== STATUS =====
+        function updateStatus(status) {
+            const badge = document.getElementById('statusBadge');
+            const text = document.getElementById('statusText');
+            const t = translations[currentLang];
+            badge.className = 'status-badge ' + status;
+            if (status === 'connected') text.textContent = t.statusConnected;
+            else if (status === 'scanning') text.textContent = t.statusScanning;
+            else text.textContent = t.statusDisconnected;
+        }
+
+        // ===== PARTNER =====
         function copyShareLink() {
             const link = document.getElementById('shareLink').textContent;
             navigator.clipboard.writeText(link).then(() => {
                 const btn = document.getElementById('copyLinkBtn');
-                const original = btn.textContent;
                 btn.textContent = translations[currentLang].copiedText;
-                setTimeout(() => {
-                    btn.textContent = original;
-                }, 2000);
+                setTimeout(() => { btn.textContent = translations[currentLang].copyBtnText; }, 2000);
             });
         }
 
-        function updateStatus(status) {
-            const badge = document.getElementById('statusBadge');
-            const text = document.getElementById('statusText');
-            const trans = translations[currentLang];
-
-            badge.className = 'status-badge ' + status;
-            
-            if (status === 'connected') {
-                text.textContent = trans.statusConnected;
-            } else if (status === 'scanning') {
-                text.textContent = trans.statusScanning;
-            } else {
-                text.textContent = trans.statusDisconnected;
-            }
-        }
-
+        // ===== SETTINGS =====
         function loadSettings() {
             document.getElementById('hapticToggle').checked = localStorage.getItem('haptic') !== 'false';
             document.getElementById('bgConnToggle').checked = localStorage.getItem('bgConn') === 'true';
@@ -1879,58 +1898,49 @@
             document.getElementById('autoConnectToggle').checked = localStorage.getItem('autoConnect') === 'true';
         }
 
+        // ===== TOAST =====
+        function showToast(msg) {
+            const el = document.getElementById('toast');
+            el.textContent = msg;
+            el.classList.add('show');
+            setTimeout(() => el.classList.remove('show'), 2500);
+        }
+
+        // ===== SERVICE WORKER =====
         async function registerServiceWorker() {
             if ('serviceWorker' in navigator) {
                 try {
-                    // Create inline SW
                     const swCode = `
                     self.addEventListener('install', e => {
-                        e.waitUntil(caches.open('myfantasy-v1').then(cache => {
-                            return cache.addAll(['/']);
-                        }).catch(() => {}));
+                        e.waitUntil(caches.open('myfantasy-v2').then(cache => cache.addAll(['/'])).catch(() => {}));
                     });
-
                     self.addEventListener('fetch', e => {
                         if (e.request.method !== 'GET') return;
-                        e.respondWith(
-                            caches.match(e.request).then(r => r || fetch(e.request).catch(() => {}))
-                        );
+                        e.respondWith(caches.match(e.request).then(r => r || fetch(e.request).catch(() => {})));
                     });
-
                     self.addEventListener('activate', e => {
-                        e.waitUntil(caches.keys().then(names => {
-                            return Promise.all(names.map(n => {
-                                if (n !== 'myfantasy-v1') return caches.delete(n);
-                            }));
-                        }));
+                        e.waitUntil(caches.keys().then(names => Promise.all(names.map(n => { if (n !== 'myfantasy-v2') return caches.delete(n); }))));
                     });
                     `;
-
                     const blob = new Blob([swCode], { type: 'application/javascript' });
-                    const swUrl = URL.createObjectURL(blob);
-                    await navigator.serviceWorker.register(swUrl);
+                    await navigator.serviceWorker.register(URL.createObjectURL(blob));
                 } catch (error) {
                     console.log('SW registration skipped:', error);
                 }
             }
         }
 
-        // Initialize app
+        // ===== START =====
         window.addEventListener('DOMContentLoaded', init);
 
-        // Handle visibility changes
         document.addEventListener('visibilitychange', () => {
-            if (document.hidden && document.getElementById('bgConnToggle').checked) {
-                // Keep connection alive in background
-            }
+            if (document.hidden && document.getElementById('bgConnToggle').checked) { /* keep alive */ }
         });
 
-        // Prevent double-tap zoom
         document.addEventListener('touchstart', (e) => {
             if (e.touches.length > 1) e.preventDefault();
         }, false);
 
-        // Status bar color for Android
         if (navigator.userAgent.includes('Android')) {
             const meta = document.createElement('meta');
             meta.name = 'theme-color';
