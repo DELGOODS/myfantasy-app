@@ -129,35 +129,36 @@
 
         header {
             background: var(--white);
-            padding: 12px 16px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 8px 12px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: relative;
             z-index: 100;
+            flex-shrink: 0;
         }
 
         .header-logo {
-            width: 120px;
+            width: 100px;
             height: auto;
             object-fit: contain;
         }
 
         .header-controls {
             display: flex;
-            gap: 12px;
+            gap: 8px;
             align-items: center;
         }
 
         .lang-toggle {
-            padding: 6px 12px;
+            padding: 4px 10px;
             background: var(--primary-light);
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             color: var(--secondary);
             font-weight: 600;
-            font-size: 12px;
+            font-size: 11px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: 'Poppins', sans-serif;
@@ -169,9 +170,9 @@
         }
 
         .status-badge {
-            padding: 6px 12px;
+            padding: 4px 10px;
             border-radius: 12px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -232,7 +233,7 @@
             display: none;
             flex-direction: column;
             overflow-y: auto;
-            padding-bottom: 70px;
+            padding-bottom: 56px;
         }
 
         .screen.active {
@@ -240,7 +241,7 @@
         }
 
         .screen-content {
-            padding: 16px;
+            padding: 12px;
             flex: 1;
         }
 
@@ -248,19 +249,19 @@
         .home-screen .screen-content {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 10px;
         }
 
         .control-card {
             background: var(--white);
             border-radius: 16px;
-            padding: 20px;
+            padding: 14px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
         .intensity-ring {
-            width: 160px;
-            height: 160px;
+            width: 120px;
+            height: 120px;
             margin: 0 auto;
             position: relative;
             display: flex;
@@ -285,8 +286,8 @@
         }
 
         .intensity-inner {
-            width: 140px;
-            height: 140px;
+            width: 104px;
+            height: 104px;
             background: var(--white);
             border-radius: 50%;
             display: flex;
@@ -297,7 +298,7 @@
         }
 
         .intensity-value {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 700;
             color: var(--secondary);
         }
@@ -310,7 +311,7 @@
         }
 
         .slider-group {
-            margin-top: 16px;
+            margin-top: 10px;
         }
 
         .slider-label {
@@ -372,25 +373,24 @@
         .patterns-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin-top: 16px;
+            gap: 8px;
+            margin-top: 10px;
         }
 
         .pattern-btn {
-            aspect-ratio: 1;
             border: 2px solid var(--border);
-            border-radius: 12px;
+            border-radius: 10px;
             background: var(--white);
             color: var(--text-dark);
             font-weight: 600;
-            font-size: 12px;
+            font-size: 11px;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 8px;
+            padding: 10px 6px;
             font-family: 'Poppins', sans-serif;
         }
 
@@ -411,10 +411,10 @@
 
         .btn-large {
             width: 100%;
-            padding: 16px;
+            padding: 12px;
             border: none;
             border-radius: 12px;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -440,7 +440,7 @@
         .btn-stop {
             background: var(--error);
             color: var(--white);
-            margin-top: 12px;
+            margin-top: 8px;
         }
 
         .btn-stop:hover {
@@ -662,7 +662,7 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 70px;
+            height: 56px;
             background: var(--white);
             border-top: 1px solid var(--border);
             display: flex;
@@ -697,7 +697,7 @@
         }
 
         .nav-icon {
-            font-size: 24px;
+            font-size: 20px;
         }
 
         /* Safe area for notch/notches */
@@ -713,8 +713,8 @@
             }
 
             .screen-content {
-                padding-left: max(16px, env(safe-area-inset-left));
-                padding-right: max(16px, env(safe-area-inset-right));
+                padding-left: max(12px, env(safe-area-inset-left));
+                padding-right: max(12px, env(safe-area-inset-right));
             }
         }
 
@@ -962,7 +962,7 @@
                 <span id="navPartnerLabel">Partner</span>
             </button>
             <button class="nav-item" data-screen="settings" id="navSettings">
-                <span class="nav-icon">☙️</span>
+                <span class="nav-icon">⚙️</span>
                 <span id="navSettingsLabel">Settings</span>
             </button>
         </nav>
