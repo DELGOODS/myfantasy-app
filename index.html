@@ -1010,7 +1010,7 @@
                         </div>
                     </div>
                     <div class="version-info">
-                        <p id="versionText">MyFantasy PWA v2.0.0</p>
+                        <p id="versionText">MyFantasy PWA v2.1.0</p>
                         <p id="builtText">Built with care for your pleasure</p>
                     </div>
                 </div>
@@ -1089,17 +1089,21 @@
             }
         };
 
-        // Mode definitions with SVG icons and labels
+        // MuSE Protocol: manufacturer data prefix + 3-byte command
+        const MUSE_PREFIX = [0x6D, 0xB6, 0x43, 0xCE, 0x97, 0xFE, 0x42, 0x7C];
+        const MUSE_STOP_CMD = [0xE5, 0x15, 0x7D];
+
+        // Mode definitions with real MuSE protocol commands
         const MODE_DEFS = [
-            { id: 'mode1', cmd: 0x01, en: 'Pulse', nl: 'Puls', icon: '<svg viewBox="0 0 32 32"><path d="M4 16h4l3-8 4 16 4-12 3 6h6"/></svg>' },
-            { id: 'mode2', cmd: 0x02, en: 'Wave', nl: 'Golf', icon: '<svg viewBox="0 0 32 32"><path d="M2 16c3-6 6-6 8 0s5 6 8 0 5-6 8 0 3 3 4 0"/></svg>' },
-            { id: 'mode3', cmd: 0x03, en: 'Vibrate', nl: 'Trillen', icon: '<svg viewBox="0 0 32 32"><path d="M4 16c2-4 4-4 6 0s3 2 5 0"/><path d="M18 16c2-4 4-4 6 0"/><circle cx="28" cy="16" r="1.5"/></svg>' },
-            { id: 'mode4', cmd: 0x04, en: 'Escalate', nl: 'Escalatie', icon: '<svg viewBox="0 0 32 32"><path d="M4 24l4-4 4-2 4-4 4-2 4-4 4-2"/><path d="M24 6l4 0 0 4"/></svg>' },
-            { id: 'mode5', cmd: 0x05, en: 'Rhythm', nl: 'Ritme', icon: '<svg viewBox="0 0 32 32"><circle cx="10" cy="16" r="4"/><circle cx="22" cy="16" r="4"/><path d="M14 16h4"/><path d="M6 16H2M30 16h-4"/></svg>' },
-            { id: 'mode6', cmd: 0x06, en: 'Knock', nl: 'Klop', icon: '<svg viewBox="0 0 32 32"><path d="M16 4v8M16 20v8"/><path d="M10 10l4 4M18 18l4 4"/><path d="M22 10l-4 4M14 18l-4 4"/></svg>' },
-            { id: 'mode7', cmd: 0x07, en: 'Burst', nl: 'Burst', icon: '<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l3 3M21.5 21.5l3 3M24.5 7.5l-3 3M10.5 21.5l-3 3"/></svg>' },
-            { id: 'mode8', cmd: 0x08, en: 'Surge', nl: 'Opzwelling', icon: '<svg viewBox="0 0 32 32"><path d="M4 24Q8 24 10 18T16 6Q19 6 22 18T28 24"/></svg>' },
-            { id: 'mode9', cmd: 0x09, en: 'Custom', nl: 'Aangepast', icon: '<svg viewBox="0 0 32 32"><path d="M16 6a10 10 0 0 1 0 20 10 10 0 0 1 0-20"/><path d="M16 10v6l4 3"/></svg>' }
+            { id: 'mode1', museCmd: [0xE4, 0x9C, 0x6C], en: 'Pulse', nl: 'Puls', icon: '<svg viewBox="0 0 32 32"><path d="M4 16h4l3-8 4 16 4-12 3 6h6"/></svg>' },
+            { id: 'mode2', museCmd: [0xE7, 0x07, 0x5E], en: 'Wave', nl: 'Golf', icon: '<svg viewBox="0 0 32 32"><path d="M2 16c3-6 6-6 8 0s5 6 8 0 5-6 8 0 3 3 4 0"/></svg>' },
+            { id: 'mode3', museCmd: [0xE6, 0x8E, 0x4F], en: 'Vibrate', nl: 'Trillen', icon: '<svg viewBox="0 0 32 32"><path d="M4 16c2-4 4-4 6 0s3 2 5 0"/><path d="M18 16c2-4 4-4 6 0"/><circle cx="28" cy="16" r="1.5"/></svg>' },
+            { id: 'mode4', museCmd: [0xE1, 0x31, 0x3B], en: 'Escalate', nl: 'Escalatie', icon: '<svg viewBox="0 0 32 32"><path d="M4 24l4-4 4-2 4-4 4-2 4-4 4-2"/><path d="M24 6l4 0 0 4"/></svg>' },
+            { id: 'mode5', museCmd: [0xE0, 0xB8, 0x2A], en: 'Rhythm', nl: 'Ritme', icon: '<svg viewBox="0 0 32 32"><circle cx="10" cy="16" r="4"/><circle cx="22" cy="16" r="4"/><path d="M14 16h4"/><path d="M6 16H2M30 16h-4"/></svg>' },
+            { id: 'mode6', museCmd: [0xE3, 0x23, 0x18], en: 'Knock', nl: 'Klop', icon: '<svg viewBox="0 0 32 32"><path d="M16 4v8M16 20v8"/><path d="M10 10l4 4M18 18l4 4"/><path d="M22 10l-4 4M14 18l-4 4"/></svg>' },
+            { id: 'mode7', museCmd: [0xE2, 0xAA, 0x09], en: 'Burst', nl: 'Burst', icon: '<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l3 3M21.5 21.5l3 3M24.5 7.5l-3 3M10.5 21.5l-3 3"/></svg>' },
+            { id: 'mode8', museCmd: [0xED, 0x5D, 0xF1], en: 'Surge', nl: 'Opzwelling', icon: '<svg viewBox="0 0 32 32"><path d="M4 24Q8 24 10 18T16 6Q19 6 22 18T28 24"/></svg>' },
+            { id: 'mode9', museCmd: [0xEC, 0xD4, 0xE0], en: 'Custom', nl: 'Aangepast', icon: '<svg viewBox="0 0 32 32"><path d="M16 6a10 10 0 0 1 0 20 10 10 0 0 1 0-20"/><path d="M16 10v6l4 3"/></svg>' }
         ];
 
         // ===== TRANSLATIONS =====
@@ -1141,7 +1145,7 @@
                 privacyDesc: 'Hide from discovery',
                 autoConnectLabel: 'Auto-Connect',
                 autoConnectDesc: 'Connect to last device',
-                versionText: 'MyFantasy PWA v2.0.0',
+                versionText: 'MyFantasy PWA v2.1.0',
                 builtText: 'Built with care for your pleasure',
                 navHomeLabel: 'Home',
                 navDevicesLabel: 'Devices',
@@ -1203,7 +1207,7 @@
                 privacyDesc: 'Verborgen voor ontdekking',
                 autoConnectLabel: 'Automatisch Verbinden',
                 autoConnectDesc: 'Verbind met laatste apparaat',
-                versionText: 'MyFantasy PWA v2.0.0',
+                versionText: 'MyFantasy PWA v2.1.0',
                 builtText: 'Met zorg gemaakt voor jouw genot',
                 navHomeLabel: 'Home',
                 navDevicesLabel: 'Apparaten',
@@ -1510,12 +1514,13 @@
             const numModes = deviceReg.modes || 9;
             const isDeviceConnected = isConnected && connectedDevice;
 
-            grid.innerHTML = MODE_DEFS.slice(0, numModes).map(mode => {
+            grid.innerHTML = MODE_DEFS.slice(0, numModes).map((mode, idx) => {
                 const label = mode[currentLang];
                 const activeClass = currentActiveMode === mode.id ? 'active' : '';
                 const disabledClass = !isDeviceConnected ? 'disabled' : '';
+                const modeIndex = idx + 1;
                 return `
-                    <button class="mode-btn ${activeClass} ${disabledClass}" data-mode-id="${mode.id}" data-cmd="${mode.cmd}" onclick="selectMode('${mode.id}', ${mode.cmd})">
+                    <button class="mode-btn ${activeClass} ${disabledClass}" data-mode-id="${mode.id}" onclick="selectMode('${mode.id}', ${modeIndex})">
                         <div class="mode-icon">${mode.icon}</div>
                         <span class="mode-label">${label}</span>
                     </button>
@@ -1529,26 +1534,39 @@
             renderMyDevices();
         }
 
-        async function selectMode(modeId, cmd) {
+        async function selectMode(modeId, modeIndex) {
             if (!isConnected || !connectedDevice) return;
 
-            // Toggle: if same mode is tapped, deactivate
+            // Toggle: if same mode is tapped, deactivate (stop)
             if (currentActiveMode === modeId) {
                 currentActiveMode = null;
-                await sendCommand(0x00, 0x00); // stop
+                await sendMuseCommand(0);
                 renderModes(DEVICE_REGISTRY[activeDeviceCode]);
                 return;
             }
 
             currentActiveMode = modeId;
             renderModes(DEVICE_REGISTRY[activeDeviceCode]);
+            await sendMuseCommand(modeIndex);
 
-            // Send BLE command: [modeCommand, intensity=10 as default]
-            await sendCommand(cmd, 10);
-
-            // Haptic feedback
             if (document.getElementById('hapticToggle').checked && navigator.vibrate) {
                 navigator.vibrate(50);
+            }
+        }
+
+        // Send MuSE protocol command via Web Bluetooth GATT
+        async function sendMuseCommand(modeIndex) {
+            if (!connectedDevice || !isConnected) return;
+            try {
+                const char = await getCharacteristic();
+                if (char) {
+                    const cmdBytes = modeIndex === 0 ? MUSE_STOP_CMD : MODE_DEFS[modeIndex - 1].museCmd;
+                    const fullCmd = new Uint8Array([...MUSE_PREFIX, ...cmdBytes]);
+                    await char.writeValue(fullCmd);
+                    console.log('MuSE command sent via GATT, mode:', modeIndex);
+                }
+            } catch (error) {
+                console.error('Write error:', error);
             }
         }
 
@@ -1572,15 +1590,15 @@
 
             try {
                 updateStatus('scanning');
-                const filters = [];
-                reg.bleNamePrefixes.forEach(prefix => {
-                    filters.push({ namePrefix: prefix });
-                });
-                filters.push({ services: ['0000fff0-0000-1000-8000-00805f9b34fb'] });
-                filters.push({ services: ['0000ffe0-0000-1000-8000-00805f9b34fb'] });
-
                 const device = await navigator.bluetooth.requestDevice({
-                    filters: filters,
+                    filters: [
+                        { namePrefix: 'MF' },
+                        { namePrefix: 'LVS' },
+                        { namePrefix: 'Love' },
+                        { namePrefix: 'MuSE' },
+                        { services: ['0000fff0-0000-1000-8000-00805f9b34fb'] },
+                        { services: ['0000ffe0-0000-1000-8000-00805f9b34fb'] }
+                    ],
                     optionalServices: [
                         '0000fff0-0000-1000-8000-00805f9b34fb',
                         '0000ffe0-0000-1000-8000-00805f9b34fb',
@@ -1605,21 +1623,26 @@
                 } catch {
                     service = await server.getPrimaryService('0000ffe0-0000-1000-8000-00805f9b34fb');
                 }
-                bleCharacteristic = await service.getCharacteristic('0000fff2-0000-1000-8000-00805f9b34fb');
+
+                // Try multiple characteristic UUIDs
+                try {
+                    bleCharacteristic = await service.getCharacteristic('0000fff2-0000-1000-8000-00805f9b34fb');
+                } catch {
+                    try {
+                        bleCharacteristic = await service.getCharacteristic('0000fff1-0000-1000-8000-00805f9b34fb');
+                    } catch {
+                        bleCharacteristic = await service.getCharacteristic('0000ffe1-0000-1000-8000-00805f9b34fb');
+                    }
+                }
 
                 connectedDevice = device;
                 isConnected = true;
                 updateStatus('connected');
                 localStorage.setItem('lastDevice', device.id);
-
-                // Update control overlay
                 updateControlOverlayState();
-                if (activeDeviceCode) {
-                    renderModes(DEVICE_REGISTRY[activeDeviceCode]);
-                }
+                if (activeDeviceCode) renderModes(DEVICE_REGISTRY[activeDeviceCode]);
                 renderMyDevices();
 
-                // Listen for disconnection
                 device.addEventListener('gattserverdisconnected', () => {
                     isConnected = false;
                     connectedDevice = null;
@@ -1638,16 +1661,6 @@
             }
         }
 
-        async function sendCommand(cmd, value) {
-            if (!connectedDevice || !isConnected) return;
-            try {
-                const char = await getCharacteristic();
-                if (char) await char.writeValue(new Uint8Array([cmd, value]));
-            } catch (error) {
-                console.error('Write error:', error);
-            }
-        }
-
         async function getCharacteristic() {
             if (bleCharacteristic) return bleCharacteristic;
             if (!connectedDevice || !connectedDevice.gatt.connected) return null;
@@ -1659,7 +1672,11 @@
                 } catch {
                     service = await server.getPrimaryService('0000ffe0-0000-1000-8000-00805f9b34fb');
                 }
-                bleCharacteristic = await service.getCharacteristic('0000fff2-0000-1000-8000-00805f9b34fb');
+                try {
+                    bleCharacteristic = await service.getCharacteristic('0000fff2-0000-1000-8000-00805f9b34fb');
+                } catch {
+                    bleCharacteristic = await service.getCharacteristic('0000fff1-0000-1000-8000-00805f9b34fb');
+                }
                 return bleCharacteristic;
             } catch (error) {
                 console.error('Get characteristic error:', error);
@@ -1669,7 +1686,7 @@
 
         async function stopDevice() {
             currentActiveMode = null;
-            await sendCommand(0x00, 0x00);
+            await sendMuseCommand(0);
             if (activeDeviceCode) renderModes(DEVICE_REGISTRY[activeDeviceCode]);
         }
 
