@@ -2677,6 +2677,26 @@
             height: 20px;
             display: block;
         }
+        .forgot-password-link {
+            display: block;
+            text-align: right;
+            margin-top: -4px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: var(--secondary);
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+            background: none;
+            border: none;
+            padding: 0;
+            font-family: inherit;
+        }
+        .forgot-password-link:hover,
+        .forgot-password-link:active {
+            opacity: 1;
+            text-decoration: underline;
+        }
         .btn-primary {
             width: 100%;
             padding: 14px;
@@ -3554,6 +3574,7 @@
                             </button>
                         </div>
                     </div>
+                    <button type="button" class="forgot-password-link" id="forgotPasswordLink">Forgot password?</button>
                     <button class="btn-primary" id="authLoginBtn">Sign In</button>
                     <p class="form-switch" id="authSwitchToRegister">Don't have an account? <span>Sign Up</span></p>
                 </div>
@@ -4488,6 +4509,9 @@
                 authEmailLabel: 'Email',
                 authPasswordLabel: 'Password',
                 authLoginBtn: 'Sign In',
+                forgotPasswordLink: 'Forgot password?',
+                forgotPasswordSuccess: 'Password reset email sent! Check your inbox.',
+                forgotPasswordNoEmail: 'Enter your email address first.',
                 authSwitchToRegister: "Don't have an account? <span>Sign Up</span>",
                 authRegUsernameLabel: 'Username',
                 authRegEmailLabel: 'Email',
@@ -4761,6 +4785,9 @@
                 authEmailLabel: 'E-mail',
                 authPasswordLabel: 'Wachtwoord',
                 authLoginBtn: 'Inloggen',
+                forgotPasswordLink: 'Wachtwoord vergeten?',
+                forgotPasswordSuccess: 'E-mail voor wachtwoordherstel verzonden! Check je inbox.',
+                forgotPasswordNoEmail: 'Vul eerst je e-mailadres in.',
                 authSwitchToRegister: 'Nog geen account? <span>Registreer</span>',
                 authRegUsernameLabel: 'Gebruikersnaam',
                 authRegEmailLabel: 'E-mail',
@@ -5632,6 +5659,7 @@
             document.getElementById('authEmailLabel').textContent = t.authEmailLabel;
             document.getElementById('authPasswordLabel').textContent = t.authPasswordLabel;
             document.getElementById('authLoginBtn').textContent = t.authLoginBtn;
+            document.getElementById('forgotPasswordLink').textContent = t.forgotPasswordLink;
             document.getElementById('authSwitchToRegister').innerHTML = t.authSwitchToRegister;
             document.getElementById('authRegUsernameLabel').textContent = t.authRegUsernameLabel;
             document.getElementById('authRegEmailLabel').textContent = t.authRegEmailLabel;
@@ -8596,9 +8624,10 @@
                 document.getElementById('authLoginForm').style.display = 'block';
             });
 
-            // Auth wall: login & register
+            // Auth wall: login, forgot password & register
             document.getElementById('authLoginBtn').addEventListener('click', handleLogin);
             document.getElementById('authLoginPassword').addEventListener('keydown', (e) => { if (e.key === 'Enter') handleLogin(); });
+            document.getElementById('forgotPasswordLink').addEventListener('click', handleForgotPassword);
             document.getElementById('authRegisterBtn').addEventListener('click', handleRegister);
 
             // Auth wall: language toggle
@@ -8650,6 +8679,24 @@
                 showToast(t.authErrorInvalid);
             }
             btn.disabled = false;
+        }
+
+        async function handleForgotPassword() {
+            const t = translations[currentLang];
+            const email = document.getElementById('authLoginEmail').value.trim();
+            if (!email || !email.includes('@')) {
+                showToast(t.forgotPasswordNoEmail);
+                return;
+            }
+            try {
+                await window.fbAuth.sendPasswordResetEmail(email);
+                logEvent('password_reset_requested', { method: 'email' });
+                showToast(t.forgotPasswordSuccess);
+            } catch (err) {
+                console.error('Password reset error:', err);
+                // Don't reveal whether email exists — always show success
+                showToast(t.forgotPasswordSuccess);
+            }
         }
 
         async function handleRegister() {
